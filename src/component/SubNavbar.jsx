@@ -51,7 +51,7 @@ const SubNavbar = () => {
                     <p className='text-sm group-hover:text-white font-semibold text-gray-500'>Esports</p>
                 </div>
                 <div className='cursor-pointer group hover:bg-[#C625AC] duration-300 py-1 px-3'>
-                   <div className='flex items-center justify-center gap-1 p-1 border border-gray-200 rounded-md'>
+                   <div className='flex items-center justify-center gap-1 p-1 border border-gray-200 hover:border-[#C625AC] rounded-md'>
                    <img src={demo} alt="call" className="w-6" />
                    <p className='text-sm group-hover:text-white font-semibold text-gray-500'>Esports</p>
                    </div>

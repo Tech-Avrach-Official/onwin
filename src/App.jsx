@@ -2,6 +2,7 @@ import Carousel from "./component/Carousel"
 import Navbar from "./component/Navbar"
 import SubNavbar from "./component/SubNavbar"
 import Home from "./pages/Home/Home"
+import LiveCasino from "./pages/Live-casino/LiveCasino"
 
 
 const App = () => {
@@ -10,7 +11,7 @@ const App = () => {
       <Navbar />
       <SubNavbar />
       <Carousel />
-      <Home />
+      <LiveCasino />
     </div>
   )
 }

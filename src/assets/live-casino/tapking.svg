@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="katman_1" data-name="katman 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #000002;
+      }
+
+      .cls-2 {
+        fill: #ff8b00;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="15" cy="15" r="15"/>
+  <g>
+    <polygon class="cls-3" points="20.71 12.46 11.43 12.46 8.73 9.86 18.01 9.86 20.71 12.46"/>
+    <polygon class="cls-3" points="20.71 12.46 20.71 25.74 17.43 23.04 17.43 11.59 20.71 12.46"/>
+    <polygon class="cls-2" points="6.83 6.11 8.27 9.05 11.32 9.05 12.38 6.11 10.99 7.11 9.61 5.31 8.29 7.03 6.83 6.11"/>
+    <circle class="cls-2" cx="6.58" cy="5.75" r=".52"/>
+    <circle class="cls-2" cx="12.59" cy="5.75" r=".52"/>
+    <circle class="cls-2" cx="9.61" cy="4.78" r=".52"/>
+  </g>
+</svg>
