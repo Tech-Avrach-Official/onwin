@@ -1,8 +1,13 @@
 import React from 'react'
+import TabCards from './components/TabCards'
+import SocialIcons from './components/SocialIcons'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <TabCards />
+      <SocialIcons />
+    </div>
   )
 }
 

@@ -1,4 +1,5 @@
 import Carousel from "./component/Carousel"
+import Footer from "./component/Footer"
 import Navbar from "./component/Navbar"
 import SubNavbar from "./component/SubNavbar"
 import Home from "./pages/Home/Home"
@@ -11,7 +12,9 @@ const App = () => {
       <Navbar />
       <SubNavbar />
       <Carousel />
-      <LiveCasino />
+      <Home />
+      <Footer />
+            {/* <LiveCasino /> */}
     </div>
   )
 }

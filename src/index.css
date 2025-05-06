@@ -3,8 +3,6 @@
 @tailwind utilities;
 
 
-
-
 @layer base {
   :root {
 
@@ -117,6 +115,21 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+/* For Swiper */
+.swiper-pagination-bullet {
+  width: 32px !important;
+  height: 3px !important;
+  border-radius: 0px !important;
+  background: white !important;
+  opacity: 0.3 !important;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background: white !important;
 }
 
 
