@@ -13,7 +13,7 @@ import Live from "@/pages/Live/Live";
 import Login from "@/pages/Login/Login";
 import OnwinX from "@/pages/OnwinX/OnwinX";
 import Parlayboy from "@/pages/Parlayboy/Parlayboy";
-import Promptions from "@/pages/Promotions/Promptions";
+import Promptions from "@/pages/Promotions/Promotions";
 import Register from "@/pages/Register/Register";
 import Virtual from "@/pages/Virtual/Virtual";
 import { Routes, Route } from "react-router-dom";
@@ -37,7 +37,7 @@ const AllRoutes = () => {
         <>
               <Navbar />
     <SubNavbar />
-  {/* <Carousel /> */}
+  <Carousel />
 
   <Routes>
             <Route path="/" element={<Home />} />
@@ -52,7 +52,7 @@ const AllRoutes = () => {
             <Route path="/parlayboy" element={<Parlayboy/>} />
             <Route path="/register" element={<Register/>} />
             <Route path="/login" element={<Login/>} />
-            <Route path="/bonuses" element={<Bonuses/>} />
+            <Route path="/bonuses" element={<Promptions/>} />
             {/* Catch-all route */}
             <Route path="*" element={<Home />} />
         </Routes>

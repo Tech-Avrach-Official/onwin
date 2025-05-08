@@ -2,7 +2,7 @@ import React from 'react'
 import BonusCarousel from './components/BonusCarousel'
 import BonusCard from './components/BonusCard'
 
-const Bonuses = () => {
+const Promptions = () => {
   return (
     <div>
         <BonusCarousel />
@@ -11,4 +11,4 @@ const Bonuses = () => {
   )
 }
 
-export default Bonuses
+export default Promptions
