@@ -4,7 +4,6 @@ import Navbar from "@/component/Navbar";
 import SubNavbar from "@/component/SubNavbar";
 import About from "@/pages/About/About";
 import Betting from "@/pages/Betting/Betting";
-import Bonuses from "@/pages/Bonuses/Bonuses";
 import Casino from "@/pages/Casino/Casino";
 import Games from "@/pages/Games/Games";
 import Home from "@/pages/Home/Home";
