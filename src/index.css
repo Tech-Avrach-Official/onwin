@@ -119,7 +119,7 @@
 
 
 /* For Swiper */
-.swiper-pagination-bullet {
+/* .swiper-pagination-bullet {
   width: 32px !important;
   height: 3px !important;
   border-radius: 0px !important;
@@ -130,7 +130,43 @@
 .swiper-pagination-bullet-active {
   opacity: 1 !important;
   background: white !important;
+} */
+.custom-bullet {
+  width: 32px !important;
+  height: 3px !important;
+  border-radius: 0px !important;
+  background: white !important;
+  opacity: 0.3 !important;
 }
 
+.custom-bullet.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background: white !important;
+}
 
+.bonus-custom-bullet {
+  width: 25px !important;
+  height: 25px !important;
+  border-radius: 100px !important;
+  background: white !important;
+  margin: 0 5px !important;
+  opacity: 0.3 !important;
+  
+}
+.bonus-custom-bullet.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background: white !important;
+}
+
+.inputStyle {
+  @apply w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-purple-400 text-sm;
+}
+
+/* .bonus-swiper-pagination {
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  z-index: 10;
+} */
 /* For all bullets/dots */

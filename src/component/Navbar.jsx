@@ -3,6 +3,7 @@ import Logo from "../assets/logo.svg";
 import call from "../assets/call.svg";
 import tv from "../assets/tv.svg";
 import tr from "../assets/tr.svg";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -34,12 +35,16 @@ const Navbar = () => {
           </div>
         </div>
         <div className="flex gap-2">
-          <button className="bg-gradient-to-t from-gray-500 to-gray-200 text-black font-bold px-8 py-2 rounded">
-            KAYIT OL
-          </button>
-          <button className="bg-gradient-to-t from-yellow-600 to-yellow-300 text-black font-bold px-8 py-2 rounded">
-            Sign Up
-          </button>
+          <Link to="/register">
+            <button className="bg-gradient-to-t from-gray-500 to-gray-200 text-black font-bold px-8 py-2 rounded">
+              KAYIT OL
+            </button>
+          </Link>
+          <Link to="/login">
+            <button className="bg-gradient-to-t from-yellow-600 to-yellow-300 text-black font-bold px-8 py-2 rounded">
+              GİRİŞ YAP
+            </button>
+          </Link>
         </div>
       </div>
     </div>

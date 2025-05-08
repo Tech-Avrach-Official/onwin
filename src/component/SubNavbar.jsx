@@ -28,17 +28,17 @@ const SubNavbar = () => {
         <div className='flex items-center justify-center flex-wrap'>
           {menuItems.map((item, index) => (
             <Link to={item.path} key={index}>
-              <div className='flex items-center justify-center whitespace-nowrap cursor-pointer group hover:bg-[#C625AC] duration-300 py-3 px-3 gap-3'>
+              <div className='flex items-center justify-center whitespace-nowrap cursor-pointer group hover:bg-[#C625AC] duration-300 py-3 px-3 gap-2'>
                 <img src={demo} alt="icon" className="w-6" />
                 <p className='text-sm group-hover:text-white font-semibold text-gray-500'>{item.label}</p>
               </div>
             </Link>
           ))}
-          <Link to="/promotions"> {/* Adjust path if needed */}
+          <Link to="/bonuses"> {/* Adjust path if needed */}
             <div className='cursor-pointer group hover:bg-[#C625AC] duration-300 py-1 px-3'>
               <div className='flex items-center justify-center gap-1 p-1 border border-gray-200 hover:border-[#C625AC] rounded-md'>
                 <img src={demo} alt="icon" className="w-6" />
-                <p className='text-sm group-hover:text-white font-semibold text-gray-500'>Promotions</p>
+                <p className='text-sm group-hover:text-white font-semibold text-gray-500'>Bonuslar</p>
               </div>
             </div>
           </Link>

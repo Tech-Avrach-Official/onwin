@@ -23,8 +23,12 @@ const Carousel = () => {
           disableOnInteraction: false,
         }}
         pagination={{
+          
             clickable: true,
-          }}
+            renderBullet: (index, className) => {
+                return `<span class="custom-bullet ${className}"></span>`;
+            },
+        }}
         modules={[Autoplay, Pagination]}
         className="w-full "
       >
