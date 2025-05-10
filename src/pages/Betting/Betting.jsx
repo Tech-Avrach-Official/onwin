@@ -1,8 +1,11 @@
 import React from 'react'
+import SportsBattingUi from './components/SportsBattingUi'
 
 const Betting = () => {
   return (
-    <div>Betting</div>
+    <div>
+      <SportsBattingUi />
+    </div>
   )
 }
 
