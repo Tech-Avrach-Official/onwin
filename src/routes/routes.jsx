@@ -34,9 +34,9 @@ const AllRoutes = () => {
     return (
 
         <>
-              <Navbar />
+              {/* <Navbar />
     <SubNavbar />
-  <Carousel />
+  <Carousel /> */}
 
   <Routes>
             <Route path="/" element={<Home />} />

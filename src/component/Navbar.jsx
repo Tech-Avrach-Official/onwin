@@ -7,12 +7,12 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="px-28 border-t-2 border-[#C625AC] flex justify-between items-center py-5 bg-[#201633] text-white">
+    <div className="px-5 md:px-28 border-t-2 border-[#C625AC] flex justify-between items-center py-5 bg-[#201633] text-white">
       <div>
-        <img src={Logo} alt="Logo" className="w-36" />
+        <img src={Logo} alt="Logo" className="w-28 md:w-36" />
       </div>
       <div className="flex items-center justify-center gap-10">
-        <div className="flex items-center justify-center gap-3">
+        <div className="hidden md:flex items-center justify-center gap-3">
           <div>
             <a href="#" className="text-lg">
               Kayıp bonusu al
@@ -36,12 +36,12 @@ const Navbar = () => {
         </div>
         <div className="flex gap-2">
           <Link to="/register">
-            <button className="bg-gradient-to-t from-gray-500 to-gray-200 text-black font-bold px-8 py-2 rounded">
+            <button className="text-sm md:text-base bg-gradient-to-t from-gray-500 to-gray-200 text-black font-bold md:px-8 px-5 py-2 rounded">
               KAYIT OL
             </button>
           </Link>
           <Link to="/login">
-            <button className="bg-gradient-to-t from-yellow-600 to-yellow-300 text-black font-bold px-8 py-2 rounded">
+            <button className="text-sm md:text-base bg-gradient-to-t from-yellow-600 to-yellow-300 text-black font-bold md:px-8 px-5 py-2 rounded">
               GİRİŞ YAP
             </button>
           </Link>
