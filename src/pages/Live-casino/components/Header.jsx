@@ -51,8 +51,17 @@ export default function Header() {
 
   return (
     <div className="relative">
+       <div className="lg:hidden flex items-center bg-white px-6 mt-5 py-3 border rounded">
+          <input
+            type="text"
+            placeholder="Search"
+            className="outline-none flex-1 text-sm bg-transparent rounded-md"
+          />
+          <Search size={18} className="text-pink-600 ml-2" />
+        </div>
       {/* Top Category Bar */}
       <div className="flex items-center gap-2 pt-8 pb-6 rounded-lg bg-[#f2f2f2]">
+      
         <div className="flex gap-4 overflow-x-auto scrollbar-hide bg-white rounded-md ">
           {categories.map((cat) => (
             <div
@@ -122,7 +131,7 @@ export default function Header() {
 
 
         {/* Search Box */}
-        <div className="ml-auto flex items-center bg-white px-6 py-3 border rounded">
+        <div className="hidden ml-auto lg:flex items-center bg-white px-6 py-3 border rounded">
           <input
             type="text"
             placeholder="Search"

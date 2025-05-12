@@ -1,9 +1,15 @@
+import Navbar from "@/component/Navbar"
 import Header from "./components/Header"
 import MainComponent from "./components/Main"
+import SubNavbar from "@/component/SubNavbar"
+import Carousel from "@/component/Carousel"
 
 const LiveCasino = () => {
   return (
-    <div className=" bg-[#f2f2f2] px-3">
+    <div>
+      <Navbar/>
+      <SubNavbar/>
+      <Carousel/>
         <Header />
         <MainComponent />
     </div>

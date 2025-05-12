@@ -93,16 +93,18 @@ const Main = () => {
   ];
 
   return (
-    <div className="flex gap-2 h-screen bg-[#f2f2f2] ">
+    <div className="flex gap-2 px-5 h-screen bg-[#f2f2f2] ">
       {/* Sidebar (17%) */}
-      <div className="w-[17%]">
+      <div className="hidden lg:block w-[17%]">
         <Sidebar />
       </div>
 
       {/* Main content (remaining) */}
-      <div className="w-[83%] overflow-y-auto">
+      <div className="w-full lg:w-[83%] overflow-y-auto">
         {/* Sub-header with filters */}
-        <SubHeader activeProvider={activeProvider} setActiveProvider={setActiveProvider} />
+       <div className="hidden lg:block">
+         <SubHeader activeProvider={activeProvider} setActiveProvider={setActiveProvider} />
+       </div>
 
         {/* Game cards grid */}
         <CardGrid cards={cards} />

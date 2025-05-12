@@ -46,7 +46,7 @@ const AllRoutes = () => {
             <Route path="/live-casino" element={<LiveCasino/>} />
             <Route path="/casino" element={<Casino/>} />
             <Route path="/virtual" element={<Virtual/>} />
-            <Route path="/onwinx" element={<OnwinX/>} />
+            {/* <Route path="/onwinx" element={<OnwinX/>} /> */}
             <Route path="/games" element={<Games/>} />
             <Route path="/parlayboy" element={<Parlayboy/>} />
             <Route path="/register" element={<Register/>} />
