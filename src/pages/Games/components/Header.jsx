@@ -36,9 +36,9 @@ export default function Header() {
   );
 
   return (
-    <div className="relative">
+    <div className="hidden md:block relative">
       {/* Top Category Bar */}
-      <div className="flex items-center gap-4 pt-8 pb-6 rounded-lg bg-[#f2f2f2] px-4">
+      <div className="flex items-center gap-4 py-8 rounded-lg bg-[#f2f2f2] px-28">
   {/* Categories: Takes remaining width */}
   <div className="flex-grow flex gap-4 overflow-x-auto scrollbar-hide bg-white rounded-md">
     {categories.map((cat) => (

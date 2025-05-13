@@ -4,6 +4,8 @@ import call from "../assets/call.svg";
 import tv from "../assets/tv.svg";
 import tr from "../assets/tr.svg";
 import { Link } from "react-router-dom";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+
 
 const Navbar = () => {
   return (
@@ -31,7 +33,16 @@ const Navbar = () => {
             </a>
           </div>
           <div>
-            <img src={tr} alt="call" className="w-6 rounded-full" />
+            <Select>
+      <SelectTrigger className="w-auto p-0 border-none bg-transparent focus:ring-0 focus:ring-offset-0">
+        <img src={tr} alt="call" className="w-6 h-6 rounded-full cursor-pointer" />
+      </SelectTrigger>
+      <SelectContent className="bg-gradient-to-l from-[#3B2864] to-[#200B4D] text-white">
+        <SelectItem value="option1">Turkish</SelectItem>
+        <SelectItem value="option2">English</SelectItem>
+        <SelectItem value="option3">Deutsch</SelectItem>
+      </SelectContent>
+    </Select>
           </div>
         </div>
         <div className="flex gap-2">

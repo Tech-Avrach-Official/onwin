@@ -11,7 +11,7 @@ const Games = () => {
   const visibleGames = games.slice(0, visibleCount)
 
   return (
-    <div className="p-4">
+    <div className="py-4 px-4 lg:px-28">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {visibleGames.map((game, index) => (
           <div
