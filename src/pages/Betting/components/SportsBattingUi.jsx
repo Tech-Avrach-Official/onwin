@@ -1,6 +1,8 @@
 import React from "react";
 import SportsSidebar from "./SportsSidebar";
 import SportsMiddle from "./SportsMiddle";
+import SportRightSide from "./SportRightSide";
+import Slip from './slip'
 
 const SportsBattingUi = () => {
   return (
@@ -11,7 +13,7 @@ const SportsBattingUi = () => {
       <div className="w-[27.5%] h-full">
         <SportsSidebar />
       </div>
-  
+    
       {/* Middle (scrollable) */}
       <div className="w-[72.5%] h-full pr-2 min-w-0">
         <SportsMiddle />
@@ -47,6 +49,8 @@ const SportsBattingUi = () => {
               </button>
             </div>
           </div>
+          <SportRightSide/>
+          <Slip/>
         </div>
       </div>
     </div>
