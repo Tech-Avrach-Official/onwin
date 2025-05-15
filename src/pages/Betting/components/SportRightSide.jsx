@@ -8,9 +8,9 @@ const SportRightSide = () => {
     const tabs = ['Tekli', 'Kombine', 'Sistem'];
 
     return (
-        <div className='flex flex-col'>
+        <div className='rightSideCards hidden flex flex-col'>
             {/* tab section for rightside */}
-            <div className='flex flex-wrap justify-between px-8 py-1 mt-2 rounded-lg bg-white shadow-2xl z-5'>
+            <div className=' flex flex-wrap justify-between px-8 py-1 mt-2 rounded-lg bg-white shadow-2xl z-5'>
                 {tabs.map((tab) => (
                     <span
                         key={tab}

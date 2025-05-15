@@ -12,7 +12,7 @@ const BettingCard = () => {
   };
 
   return (
-    <div className="mt-4 border rounded-lg bg-white shadow-md p-3 text-sm text-gray-800 relative">
+    <div className=" mt-4 border rounded-lg bg-white shadow-md p-3 text-sm text-gray-800 relative">
       {/* Header */}
       <div className="flex items-center justify-between font-semibold  text-base border-b-2 border-black-100">
         <div className="flex items-center gap-2">

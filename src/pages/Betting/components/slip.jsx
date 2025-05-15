@@ -12,7 +12,7 @@ export default function BetSlip() {
     const decreaseBet = () => setBetAmount(prev => (prev > 0 ? +(prev - 1).toFixed(2) : 0));
 
     return (
-        <div className="border border-gray-200 shadow p-4 rounded bg-white mt-2">
+        <div className="rightSideCards hidden border border-gray-200 shadow p-4 rounded bg-white mt-2">
             <div className='flex justify-between'>
                 <div className=''>
                     <div className="text-sm font-semibold text-gray-700">Kupon Başına Tutar</div>

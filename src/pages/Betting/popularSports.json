@@ -1,0 +1,97 @@
+[
+    {
+        "title": "Futbal",
+        "image": "/Betting/sportimg.png",
+        "numbers":"1165"
+    },
+    {
+        "title": "Basketbol",
+        "image": "/Betting/sportimg1.png",
+        "numbers":"130"
+    },
+    {
+        "title": "Tenis",
+        "image": "/Betting/sportimg2.png",
+        "numbers":"304"
+    },
+    {
+        "title": "Buz Hokeyi",
+        "image": "/Betting/sportimg3.png",
+        "numbers":"49"
+    },
+    {
+        "title": "Voleybol",
+        "image": "/Betting/sportimg4.png",
+        "numbers":"55"
+    },
+    {
+        "title": "Hentbol",
+        "image": "/Betting/sportimg5.png",
+        "numbers":"70"
+    },
+    {
+        "title": "Beyzbol",
+        "image": "/Betting/sportimg6.png",
+        "numbers":"31"
+    },
+    {
+        "title": "Dart",
+        "image": "/Betting/sportimg7.png",
+        "numbers":"29"
+    },
+    {
+        "title": "Kriket",
+        "image": "/Betting/sportimg8.png",
+        "numbers":"59"
+    },
+    {
+        "title": "Badminton",
+        "image": "/Betting/sportimg9.png",
+        "numbers":"14"
+    },
+    {
+        "title": "Futsal",
+        "image": "/Betting/sportimg10.png",
+        "numbers":"19"
+    },
+    {
+        "title": "Duvar Tenisi",
+        "image": "/Betting/sportimg11.png",
+        "numbers":"4"
+    },
+    {
+        "title": "Amerikan Futbolu",
+        "image": "/Betting/sportimg12.png",
+        "numbers":"46"
+    },
+    {
+        "title": "Avustralya Futbolu",
+        "image": "/Betting/sportimg13.png",
+        "numbers":"16"
+    },
+    {
+        "title": "Plaj Voleybolu",
+        "image": "/Betting/sportimg14.png",
+        "numbers":"6"
+    },
+    {
+        "title": "Cim Hokeyi",
+        "image": "/Betting/sportimg15.png",
+        "numbers":"4"
+    },
+    {
+        "title": "Ragbi",
+        "image": "/Betting/sportimg13.png",
+        "numbers":"54"
+    },
+    {
+        "title": "Masa Tenisi",
+        "image": "/Betting/sportimg16.png",
+        "numbers":"243"
+    },
+    {
+        "title": "Su Topu",
+        "image": "/Betting/sportimg17.png",
+        "numbers":"6"
+    }
+]   

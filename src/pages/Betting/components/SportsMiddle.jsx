@@ -16,9 +16,11 @@ import {
 import SportsCarousel from "./SportsCarousel";
 import map from "@/assets/map.png";
 import soccer from "@/assets/soccer.png";
+import { useNavigate } from "react-router-dom";
 
 const SportsMiddle = () => {
   const [isTopChampionshipsOpen, setIsTopChampionshipsOpen] = useState(true);
+
   return (
     <div>
       <div>
@@ -89,7 +91,7 @@ const SportsMiddle = () => {
               <DummyUi />
             </div>
             <div className="flex items-center justify-center mt-10 bg-[#3B2864] rounded-lg text-sm font-medium text-white py-3 pl-3">
-                Load More
+              Load More
             </div>
           </CollapsibleContent>
         </Collapsible>
@@ -102,9 +104,28 @@ export default SportsMiddle;
 
 const DummyUi = () => {
   const [favorited, setFavorited] = useState(false);
+  const [count, setCount] = useState(0);
+  const navigate = useNavigate();
+
+  const handler = () => {
+    setCount(prev => prev + 1);
+    if (count >= 1) {
+      navigate('/login')
+    }
+
+    const cards = document.querySelectorAll('.rightSideCards');
+    Array.from(cards).forEach(card => {
+      card.classList.remove('hidden');
+      card.classList.add('block');
+    });
+  };
+
+
+
 
   return (
-    <div>
+    <div
+    >
       <div className="flex items-center justify-between bg-[#3B2864] text-white py-2 pl-3">
         <div className="flex items-center">
           <div className="mr-2">
@@ -124,7 +145,10 @@ const DummyUi = () => {
           <div className="text-center w-14">12</div>
         </div>
       </div>
-      <div>
+      <div
+      onClick={handler}
+      
+      >
         <div className="border-b h-full border-gray-200 flex items-center justify-between gap-5">
           <div className="h-14 pl-4 flex items-center gap-5">
             <div className="mr-4">
@@ -147,8 +171,8 @@ const DummyUi = () => {
           </div>
           <div className="flex items-center justify-center h-14">
             <div className="flex items-center justify-center h-full px-4 text-xs font-medium border-x border-gray-200">
-                <p>641</p>
-                <ChevronDown className="h-4 w-4 ml-1 text-[#3B2864]" />
+              <p>641</p>
+              <ChevronDown className="h-4 w-4 ml-1 text-[#3B2864]" />
             </div>
             <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
             <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
@@ -180,8 +204,8 @@ const DummyUi = () => {
           </div>
           <div className="flex items-center justify-center h-14">
             <div className="flex items-center justify-center h-full px-4 text-xs font-medium border-x border-gray-200">
-                <p>641</p>
-                <ChevronDown className="h-4 w-4 ml-1 text-[#3B2864]" />
+              <p>641</p>
+              <ChevronDown className="h-4 w-4 ml-1 text-[#3B2864]" />
             </div>
             <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
             <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
@@ -213,8 +237,8 @@ const DummyUi = () => {
           </div>
           <div className="flex items-center justify-center h-14">
             <div className="flex items-center justify-center h-full px-4 text-xs font-medium border-x border-gray-200">
-                <p>641</p>
-                <ChevronDown className="h-4 w-4 ml-1 text-[#3B2864]" />
+              <p>641</p>
+              <ChevronDown className="h-4 w-4 ml-1 text-[#3B2864]" />
             </div>
             <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
             <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
@@ -246,8 +270,8 @@ const DummyUi = () => {
           </div>
           <div className="flex items-center justify-center h-14">
             <div className="flex items-center justify-center h-full px-4 text-xs font-medium border-x border-gray-200">
-                <p>641</p>
-                <ChevronDown className="h-4 w-4 ml-1 text-[#3B2864]" />
+              <p>641</p>
+              <ChevronDown className="h-4 w-4 ml-1 text-[#3B2864]" />
             </div>
             <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
             <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
@@ -279,8 +303,8 @@ const DummyUi = () => {
           </div>
           <div className="flex items-center justify-center h-14">
             <div className="flex items-center justify-center h-full px-4 text-xs font-medium border-x border-gray-200">
-                <p>641</p>
-                <ChevronDown className="h-4 w-4 ml-1 text-[#3B2864]" />
+              <p>641</p>
+              <ChevronDown className="h-4 w-4 ml-1 text-[#3B2864]" />
             </div>
             <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
             <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
@@ -312,8 +336,8 @@ const DummyUi = () => {
           </div>
           <div className="flex items-center justify-center h-14">
             <div className="flex items-center justify-center h-full px-4 text-xs font-medium border-x border-gray-200">
-                <p>641</p>
-                <ChevronDown className="h-4 w-4 ml-1 text-[#3B2864]" />
+              <p>641</p>
+              <ChevronDown className="h-4 w-4 ml-1 text-[#3B2864]" />
             </div>
             <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
             <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
