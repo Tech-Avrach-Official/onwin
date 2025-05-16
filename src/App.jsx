@@ -23,12 +23,15 @@
 
 import { BrowserRouter } from "react-router-dom";
 import AllRoutes from "./routes/Routes";
+import { SiteProvider } from "./context/SiteContext";
 
 const App = () => {
   return (
+      <SiteProvider>
     <BrowserRouter>
-      <AllRoutes />
+        <AllRoutes />
     </BrowserRouter>
+      </SiteProvider>
   );
 };
 

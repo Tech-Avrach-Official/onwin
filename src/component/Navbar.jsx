@@ -7,19 +7,16 @@ import { Link } from "react-router-dom";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useEffect ,useState} from "react";
 import { Contact } from "lucide-react";
+import { useSite } from "@/context/SiteContext";
 
 
 
 const Navbar = () => {
  
-    const [language, setLanguage] = useState(() => localStorage.getItem("language") || "turkish");
+  const { language, setLanguage } = useSite();
 
-  // Save language to localStorage whenever it changes
-  // Update language state *and* localStorage together
   const onLanguageChange = (value) => {
-    localStorage.setItem("language", value);  // Save immediately
     setLanguage(value);
-    window.location.reload();
   };
   return (
     <div className="px-5 md:px-28 border-t-2 border-[#C625AC] flex justify-between items-center py-5 bg-[#201633] text-white">
