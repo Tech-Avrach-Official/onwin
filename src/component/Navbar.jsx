@@ -5,9 +5,22 @@ import tv from "../assets/tv.svg";
 import tr from "../assets/tr.svg";
 import { Link } from "react-router-dom";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useEffect ,useState} from "react";
+import { Contact } from "lucide-react";
+
 
 
 const Navbar = () => {
+ 
+    const [language, setLanguage] = useState(() => localStorage.getItem("language") || "turkish");
+
+  // Save language to localStorage whenever it changes
+  // Update language state *and* localStorage together
+  const onLanguageChange = (value) => {
+    localStorage.setItem("language", value);  // Save immediately
+    setLanguage(value);
+    window.location.reload();
+  };
   return (
     <div className="px-5 md:px-28 border-t-2 border-[#C625AC] flex justify-between items-center py-5 bg-[#201633] text-white">
       <div>
@@ -33,14 +46,13 @@ const Navbar = () => {
             </a>
           </div>
           <div>
-            <Select>
+            <Select value={language} onValueChange={onLanguageChange}>
       <SelectTrigger className="w-auto p-0 border-none bg-transparent focus:ring-0 focus:ring-offset-0">
         <img src={tr} alt="call" className="w-6 h-6 rounded-full cursor-pointer" />
       </SelectTrigger>
       <SelectContent className="bg-gradient-to-l from-[#3B2864] to-[#200B4D] text-white">
-        <SelectItem value="option1">Turkish</SelectItem>
-        <SelectItem value="option2">English</SelectItem>
-        <SelectItem value="option3">Deutsch</SelectItem>
+        <SelectItem value="turkish">Turkish</SelectItem>
+        <SelectItem value="english">English</SelectItem>
       </SelectContent>
     </Select>
           </div>
