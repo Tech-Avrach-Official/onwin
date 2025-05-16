@@ -4,7 +4,7 @@ import { Search } from "lucide-react";
 // Categories data (top tabs)
 const categories = [
   { name: "Tümü", icon: "/icons/all.png" },
-  { name: "Favorite", icon: "/icons/favorite.png" },
+  { name: "Favorite", icon: "/assets-ow/casino/img/icons/star.png" },
   { name: "Yeni", icon: "/icons/new.png" },
   { name: "Popüler Oyunlar", icon: "/icons/popular.png" },
   { name: "TURNUVA", icon: "/icons/tournament.png" },
@@ -20,25 +20,25 @@ const categories = [
 // Provider box data
 const providers = [
   { name: "All Providers", icon: "/providers/all.png" },
-  { name: "Examinglive", icon: "/providers/examinglive.png", count: 9 },
-  { name: "Bgtv", icon: "/providers/bgtv.png", count: 10 },
-  { name: "Xpg", icon: "/providers/xpg.png", count: 18 },
-  { name: "Tapking", icon: "/providers/tapking.png", count: 25 },
-  { name: "Pragmaticplay", icon: "/providers/pragmaticplay.png", count: 349 },
-  { name: "Playtech", icon: "/providers/playtech.png", count: 32 },
-  { name: "Amusnet", icon: "/providers/amusnet.png", count: 7 },
-  { name: "Algnets", icon: "/providers/algnets.png", count: 12 },
-  { name: "Evolution", icon: "/providers/evolution.png", count: 104 },
-  { name: "Ninja-Gaming-Lc", icon: "/providers/ninja.png", count: 10 },
-  { name: "Luckystreak", icon: "/providers/luckystreak.png", count: 9 },
-  { name: "Vivo", icon: "/providers/vivo.png", count: 28 },
-  { name: "Ezugi", icon: "/providers/ezugi.png", count: 56 },
+  { name: "Pragmaticplay", count: 349, image: "https://cloudcdn.owcontent.com/assets/svg/providers/pragmaticplay.svg" },
+  { name: "Ninja-gaming-lc", count: 10, image: "https://cloudcdn.owcontent.com/assets/svg/providers/ninja-gaming-lc.svg" },
+  { name: "Exagaminglive", count: 9, image: "https://cloudcdn.owcontent.com/assets/svg/providers/exagaminglive.svg" },
+  { name: "Playtech", count: 32, image: "https://cloudcdn.owcontent.com/assets/svg/providers/playtech.svg" },
+  { name: "Luckystreak", count: 9, image: "https://cloudcdn.owcontent.com/assets/svg/providers/luckystreak.svg" },
+  { name: "Bgtv", count: 10, image: "https://cloudcdn.owcontent.com/assets/svg/providers/bgtv.svg" },
+  { name: "Amusnet", count: 7, image: "https://cloudcdn.owcontent.com/assets/svg/providers/amusnet.svg" },
+  { name: "Vivo", count: 28, image: "https://cloudcdn.owcontent.com/assets/svg/providers/vivo.svg" },
+  { name: "Xpg", count: 18, image: "https://cloudcdn.owcontent.com/assets/svg/providers/xpg.svg" },
+  { name: "Algnet", count: 12, image: "https://cloudcdn.owcontent.com/assets/svg/providers/algnet.svg" },
+  { name: "Ezugi", count: 56, image: "https://cloudcdn.owcontent.com/assets/svg/providers/ezugi.svg" },
+  { name: "Tapking", count: 25, image: "https://cloudcdn.owcontent.com/assets/svg/providers/tapking.svg" },
+  { name: "Evolution", count: 104, image: "https://cloudcdn.owcontent.com/assets/svg/providers/evolution.svg" },
 ];
 
-export default function Header() {
+export default function Header({ activeProvider, setActiveProvider }) {
   const [active, setActive] = useState("Tümü");
   const [showProviderBox, setShowProviderBox] = useState(false);
-  const [activeProvider, setActiveProvider] = useState("All Providers");
+
   const [searchText, setSearchText] = useState("");
 
   const toggleProviderBox = () => {
@@ -114,7 +114,7 @@ export default function Header() {
                 : "bg-white text-[#524471]"}
             `}
           >
-            <img src={provider.icon} alt={provider.name} className="w-5 h-5 object-contain" />
+            <img src={provider.image} alt={provider.name} className="w-7 h-7 object-contain" />
             {provider.name}
             {provider.count && (
               <span className="text-xs font-semibold">
