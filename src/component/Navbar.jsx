@@ -6,8 +6,9 @@ import tr from "../assets/tr.svg";
 import { Link } from "react-router-dom";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useEffect ,useState} from "react";
-import { Contact } from "lucide-react";
+import { Contact, Menu } from "lucide-react";
 import { useSite } from "@/context/SiteContext";
+import SideNavbar from "./SideNavbar";
 
 
 
@@ -20,7 +21,10 @@ const Navbar = () => {
   };
   return (
     <div className="px-5 md:px-28 border-t-2 border-[#C625AC] flex justify-between items-center py-5 bg-[#201633] text-white">
+      <div className="flex items-center gap-2">
       <div>
+        <SideNavbar/>
+      </div>
         <img src={Logo} alt="Logo" className="w-28 md:w-36" />
       </div>
       <div className="flex items-center justify-center gap-10">
