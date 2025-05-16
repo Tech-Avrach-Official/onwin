@@ -5,6 +5,7 @@ import SubNavbar from "@/component/SubNavbar";
 import About from "@/pages/About/About";
 import Betting from "@/pages/Betting/Betting";
 import Casino from "@/pages/Casino/Casino";
+import Esports from "@/pages/Esports/Esports";
 import Games from "@/pages/Games/Games";
 import Home from "@/pages/Home/Home";
 import LiveCasino from "@/pages/Live-casino/LiveCasino";
@@ -51,6 +52,7 @@ const AllRoutes = () => {
             <Route path="/parlayboy" element={<Parlayboy/>} />
             <Route path="/register" element={<Register/>} />
             <Route path="/login" element={<Login/>} />
+            <Route path="/esports" element={<Esports/>} />
             <Route path="/bonuses" element={<Promptions/>} />
             {/* Catch-all route */}
             <Route path="*" element={<Home />} />
