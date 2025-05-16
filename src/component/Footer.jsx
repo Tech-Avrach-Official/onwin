@@ -26,12 +26,12 @@ import spinomenal from "../assets/footer/spinomenal.png";
 import tomhorn from "../assets/footer/tomhorn.png"; // Placeholder image
 import vivo from "../assets/footer/vivo.png"; // Placeholder image
 import xpg from "../assets/footer/xpg.png"; // Placeholder image
-
+import { useSite } from "@/context/SiteContext";
 
 
 const Footer = () => {
   const [isMobile, setIsMobile] = useState(false);
-
+  const {language}= useSite();
   // Check screen size on mount and window resize
   useEffect(() => {
     const checkScreenSize = () => {
@@ -143,8 +143,72 @@ const Footer = () => {
     },
   ];
 
+  // Footer column links in English
+const footerLinksEn = [
+  {
+    id: "corporate",
+    title: "CORPORATE",
+    links: [
+      "About Us",
+      "Affiliate Program",
+      "Our Partners",
+      "Contact",
+      "Onwin",
+      "Onwin Login",
+      "Onwin Mobile App",
+    ],
+  },
+  {
+    id: "sports",
+    title: "SPORTS BETTING",
+    links: [
+      "Football Betting",
+      "Basketball Betting",
+      "Tennis Betting",
+      "Virtual Sports Betting",
+      "General Sports Rules",
+    ],
+  },
+  {
+    id: "casino",
+    title: "CASINO GAMES",
+    links: [
+      "Ezugi",
+      "Evolution",
+      "Lucky Streak",
+      "General Casino Rules",
+      "Playtech",
+      "Alg Casino",
+      "Betgames",
+      "Amusnet Casino",
+      "Pragmatic Play",
+      "Vivo Gaming",
+      "XPG Casino",
+    ],
+  },
+  {
+    id: "support",
+    title: "SUPPORT",
+    links: [
+      "FAQ",
+      "Deposit",
+      "Withdraw",
+      "Complaints",
+      "Terms of Use",
+      "General Wagering Rules",
+      "Responsible Gaming",
+      "Anti-Money Laundering and KYC Policy",
+      "Self Exclusion",
+      "Fair Gaming & RNG Testing Methods",
+      "Cookies",
+    ],
+  },
+];
+
+
   // Render either accordion (mobile) or regular columns (desktop)
   const renderFooterLinks = () => {
+    if(language==="turkish"){
     if (isMobile) {
       return (
         <div className="px-4 py-6">
@@ -192,8 +256,60 @@ const Footer = () => {
         </div>
       );
     }
-  };
+  }
+  else{
+     if (isMobile) {
+      return (
+        <div className="px-4 py-6">
+          <Accordion type="single" collapsible className="w-full">
+            {footerLinksEn.map((section) => (
+              <AccordionItem key={section.id} value={section.id}>
+                <AccordionTrigger className="text-base font-extrabold md:border-b-4 md:border-pink-500 py-2">
+                  {section.title}
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="space-y-2 py-2">
+                    {section.links.map((link, i) => (
+                      <li key={i}>
+                        <a href="#" className="text-gray-300 hover:text-white transition">
+                          {link}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      );
+    } else {
+      return (
+        <div className="w-full md:w-[65%] grid grid-cols-1 md:grid-cols-4 gap-8">
+          {footerLinksEn.map((section) => (
+            <div key={section.id}>
+              <h3 className="text-base font-extrabold mb-2 border-b-4 border-pink-500 inline-block">
+                {section.title}
+              </h3>
+              <ul className="space-y-2">
+                {section.links.map((link, i) => (
+                  <li key={i}>
+                    <a href="#" className="text-gray-300 hover:text-white transition">
+                      {link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      );
+    }
+  }
+}
 
+
+  if(language==="turkish"){
   return (
     <footer className="bg-[#3B2864] text-white">
       {/* Main Footer */}
@@ -320,7 +436,136 @@ const Footer = () => {
         </button>
       </div> */}
     </footer>
-  );
+  );}
+  else{
+    return (
+  <footer className="bg-[#3B2864] text-white">
+    {/* Main Footer */}
+    <div className={`flex flex-col md:flex-row ${isMobile ? '' : 'gap-20 py-12 pl-60 pr-20'}`}>
+      {/* Links Section */}
+      {renderFooterLinks()}
+
+      {/* Logo and Certification Section */}
+      <div className={`${isMobile ? 'px-4 py-6 text-center' : 'w-[35%] text-center md:text-left'}`}>
+        {/* Logo */}
+        <div className="flex justify-center md:justify-start">
+          <img src={logo} alt="Onwin Logo" className="w-40 mb-4" />
+        </div>
+        <p className="text-xs text-gray-300 mb-2">
+          © 2025 Onwin | All Rights Reserved.
+        </p>
+        <p className="text-xs text-gray-300 max-w-md mx-auto md:mx-0">
+          The Onwin.com site operates under Soçaş International B.V. with Curaçao license number OGL/2024/1295/0544, 
+          located at Dr.M.J.Hugenholtzweg 25, Willemstad, Curaçao, and is licensed by the Curaçao Gaming Control Board, 
+          under the authority of the Government of Curaçao.
+        </p>
+
+        {/* Social Media */}
+        <div className="flex space-x-1 mt-3 justify-center md:justify-start">
+          {socialPlatforms.map((platform) => (
+            <div 
+              key={platform} 
+              className="h-6 w-6 rounded-full bg-gray-700 opacity-70 hover:opacity-100 transition flex items-center justify-center"
+            >
+              <img src={platform.image} alt={platform.name} className="h-full" />
+            </div>
+          ))}
+        </div>
+
+        {/* Certification Logo */}
+        <div className="flex justify-center md:justify-start mt-4">
+          <img src={gcb} alt="GCB Logo" className="h-20" />
+        </div>
+      </div>
+    </div>
+
+    {/* Payment Methods */}
+    <div className="hidden md:block bg-[#2D1A59]">
+      <div className="px-4 md:px-28">
+        <div className="flex flex-wrap justify-center md:justify-between gap-3 md:gap-0 py-3">
+          {paymentMethods.map((method) => (
+            <div key={method} className="h-5 w-12 rounded flex items-center justify-center text-xs">
+              <img src={method.image} alt={method} className="h-full" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {/* Game Providers */}
+    <div className="hidden md:block bg-[#200B4D] border-t border-gray-700">
+      <div className="container mx-auto px-4">
+        <div className="flex overflow-x-auto whitespace-nowrap gap-6 py-2">
+          {gameProviders.map((provider) => (
+            <div key={provider.id} className="shrink-0">
+              <div className="w-24 md:w-40 h-10 md:h-14 rounded flex items-center justify-center text-xs">
+                <img src={provider.image} alt={provider.name} className="h-full" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {/* Bottom Links */}
+    <div className="bg-purple-950 py-4 border-t border-gray-700">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-wrap items-center justify-center gap-x-2 md:gap-x-4 text-xs md:text-sm text-gray-400">
+          {isMobile ? (
+            <>
+              <a href="#" className="hover:text-white">Responsible Betting</a>
+              <span>|</span>
+              <a href="#" className="hover:text-white">Rules</a>
+              <span>|</span>
+              <a href="#" className="hover:text-white">Cookies</a>
+              <span>|</span>
+              <a href="#" className="hover:text-white">Privacy</a>
+              <span>|</span>
+              <a href="#" className="hover:text-white">Contact</a>
+            </>
+          ) : (
+            <>
+              <a href="#" className="hover:text-white">Responsible Betting</a>
+              <span>|</span>
+              <a href="#" className="hover:text-white">Terms and Conditions</a>
+              <span>|</span>
+              <a href="#" className="hover:text-white">Cookies</a>
+              <span>|</span>
+              <a href="#" className="hover:text-white">Privacy Policy</a>
+              <span>|</span>
+              <a href="#" className="hover:text-white">Contact</a>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+
+    {/* Chat Button - Fixed on all screens */}
+    {/* 
+    <div className="fixed bottom-8 right-8 z-50">
+      <button className="bg-pink-600 hover:bg-pink-700 text-white rounded-full p-4 shadow-lg transition">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+          />
+        </svg>
+      </button>
+    </div> 
+    */}
+  </footer>
+);
+
+  }
+
 };
 
 export default Footer;

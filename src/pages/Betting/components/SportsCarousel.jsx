@@ -4,36 +4,68 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useSite } from '@/context/SiteContext';
 
-const sports = [
-  { icon: '⚽', name: 'Football' },
-  { icon: '🏀', name: 'Basketball' },
-  { icon: '🏈', name: 'American Football' },
-  { icon: '🏐', name: 'Volleyball' },
-  { icon: '🏏', name: 'Cricket' },
-  { icon: '🏸', name: 'Badminton' },
-  { icon: '🥍', name: 'Lacrosse' },
-  { icon: '🏓', name: 'Table Tennis' },
-  { icon: '🏒', name: 'Hockey' },
-  { icon: '🥊', name: 'Boxing' },
-  { icon: '⚽', name: 'Football' },
-  { icon: '🏀', name: 'Basketball' },
-  { icon: '🏈', name: 'American Football' },
-  { icon: '🏐', name: 'Volleyball' },
-  { icon: '🏏', name: 'Cricket' },
-  { icon: '🏸', name: 'Badminton' },
-  { icon: '🥍', name: 'Lacrosse' },
-  { icon: '🏓', name: 'Table Tennis' },
-  { icon: '🏒', name: 'Hockey' },
-  { icon: '🥊', name: 'Boxing' },
-];
+const sports = {
+  en: [
+    { icon: '⚽', name: 'Football' },
+    { icon: '🏀', name: 'Basketball' },
+    { icon: '🏈', name: 'American Football' },
+    { icon: '🏐', name: 'Volleyball' },
+    { icon: '🏏', name: 'Cricket' },
+    { icon: '🏸', name: 'Badminton' },
+    { icon: '🥍', name: 'Lacrosse' },
+    { icon: '🏓', name: 'Table Tennis' },
+    { icon: '🏒', name: 'Hockey' },
+    { icon: '🥊', name: 'Boxing' },
+    { icon: '⚽', name: 'Football' },
+    { icon: '🏀', name: 'Basketball' },
+    { icon: '🏈', name: 'American Football' },
+    { icon: '🏐', name: 'Volleyball' },
+    { icon: '🏏', name: 'Cricket' },
+    { icon: '🏸', name: 'Badminton' },
+    { icon: '🥍', name: 'Lacrosse' },
+    { icon: '🏓', name: 'Table Tennis' },
+    { icon: '🏒', name: 'Hockey' },
+    { icon: '🥊', name: 'Boxing' },
+  ],
+  tr: [
+    { icon: '⚽', name: 'Futbol' },
+    { icon: '🏀', name: 'Basketbol' },
+    { icon: '🏈', name: 'Amerikan Futbolu' },
+    { icon: '🏐', name: 'Voleybol' },
+    { icon: '🏏', name: 'Kriket' },
+    { icon: '🏸', name: 'Badminton' },
+    { icon: '🥍', name: 'Lakros' },
+    { icon: '🏓', name: 'Masa Tenisi' },
+    { icon: '🏒', name: 'Buz Hokeyi' },
+    { icon: '🥊', name: 'Boks' },
+    { icon: '⚽', name: 'Futbol' },
+    { icon: '🏀', name: 'Basketbol' },
+    { icon: '🏈', name: 'Amerikan Futbolu' },
+    { icon: '🏐', name: 'Voleybol' },
+    { icon: '🏏', name: 'Kriket' },
+    { icon: '🏸', name: 'Badminton' },
+    { icon: '🥍', name: 'Lakros' },
+    { icon: '🏓', name: 'Masa Tenisi' },
+    { icon: '🏒', name: 'Buz Hokeyi' },
+    { icon: '🥊', name: 'Boks' },
+  ]
+};
+
 
 const SportsCarousel = () => {
   const swiperRef = useRef(null);
+  const {language}=useSite()
 
   const slideNext = () => swiperRef.current?.swiper.slideNext();
   const slidePrev = () => swiperRef.current?.swiper.slidePrev();
-
+  let tempSports;
+  if(language==='turkish'){
+    tempSports=sports.tr
+  }else{
+    tempSports=sports.en
+  }
   return (
     <div className="relative w-full py-4 bg-white">
       <button
@@ -51,7 +83,7 @@ const SportsCarousel = () => {
     slidesPerView="auto"
     className=""
   >
-    {sports.map((sport, index) => (
+    {tempSports.map((sport, index) => (
       <SwiperSlide key={index} style={{ width: 'auto' }}>
         <div className="flex items-center gap-1 text-sm text-gray-700">
           <div className="text-2xl">{sport.icon}</div>

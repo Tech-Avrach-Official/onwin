@@ -17,9 +17,11 @@ import SportsCarousel from "./SportsCarousel";
 import map from "@/assets/map.png";
 import soccer from "@/assets/soccer.png";
 import { useNavigate } from "react-router-dom";
+import { useSite } from "@/context/SiteContext";
 
 const SportsMiddle = () => {
   const [isTopChampionshipsOpen, setIsTopChampionshipsOpen] = useState(true);
+    const {language}=useSite();
 
   return (
     <div>
@@ -29,7 +31,7 @@ const SportsMiddle = () => {
           onOpenChange={setIsTopChampionshipsOpen}
         >
           <CollapsibleTrigger className="flex justify-between rounded-t-md items-center w-full bg-[#3B2864] text-white px-4 py-4">
-            <span className="font-medium text-sm">Sports Betting</span>
+            <span className="font-medium text-sm">{language==='turkish'?'Spor Bahisleri':'Sports Betting'}</span>
             {isTopChampionshipsOpen ? (
               <ChevronUp className="h-5 w-5" />
             ) : (
@@ -91,7 +93,7 @@ const SportsMiddle = () => {
               <DummyUi />
             </div>
             <div className="flex items-center justify-center mt-10 bg-[#3B2864] rounded-lg text-sm font-medium text-white py-3 pl-3">
-              Load More
+              {language==='turkish'? 'Daha fazla göster':'Load More'}
             </div>
           </CollapsibleContent>
         </Collapsible>
@@ -106,6 +108,7 @@ const DummyUi = () => {
   const [favorited, setFavorited] = useState(false);
   const [count, setCount] = useState(0);
   const navigate = useNavigate();
+  const {language}=useSite();
 
   const handler = () => {
     setCount(prev => prev + 1);
@@ -134,7 +137,7 @@ const DummyUi = () => {
           <div className="flex items-center mr-2">
             <img src={map} alt="" className="w-5" />
           </div>
-          <span className="font-medium text-xs">Soccer, Super Liga</span>
+          <span className="font-medium text-xs">{language === "turkish" ? "Futbol, Süper Lig" : "Soccer, Super Liga"}</span>
         </div>
         <div className="flex items-center font-medium text-xs">
           <div className="text-center w-14">1</div>
@@ -145,209 +148,53 @@ const DummyUi = () => {
           <div className="text-center w-14">12</div>
         </div>
       </div>
-      <div
-      onClick={handler}
-      
-      >
-        <div className="border-b h-full border-gray-200 flex items-center justify-between gap-5">
-          <div className="h-14 pl-4 flex items-center gap-5">
-            <div className="mr-4">
-              <p className="text-[10px] text-gray-400">11.05.25</p>
-              <p className="text-[10px] text-gray-400">6:00 PM</p>
+
+      {[...Array(6)].map((_, i) => (
+        <div onClick={handler} key={i}>
+          <div className="cursor-pointer border-b h-full border-gray-200 flex items-center justify-between gap-5">
+            {/* Left Section */}
+            <div className="h-14 pl-4 flex items-center gap-5">
+              <div className="mr-4">
+                <p className="text-[10px] text-gray-400">11.05.25</p>
+                <p className="text-[10px] text-gray-400">6:00 PM</p>
+              </div>
+              <div className="w-40">
+                <p className="text-xs text-[#3B2864] font-medium">Sivasspor</p>
+                <p className="text-xs text-[#3B2864] font-medium line-clamp-1">
+                 {language==='turkish'? 'Bodrum Belediyesi Bordrums' : 'Bodrum Municipality Bodrumspor'}
+                </p>
+              </div>
+              <div className="flex gap-1">
+                <Star size={19} className="text-[#3B2864]" />
+                <Pin size={19} className="text-[#3B2864]" />
+                <Pin size={19} className="text-[#3B2864]" />
+                <BarChart3 size={19} className="text-[#3B2864]" />
+                <BarChart3 size={19} className="text-[#3B2864]" />
+              </div>
             </div>
-            <div className="w-40">
-              <p className="text-xs text-[#3B2864] font-medium">Sivasspor</p>
-              <p className="text-xs text-[#3B2864] font-medium line-clamp-1">
-                Bodrum Belediyesi Bordrums ddddd
-              </p>
+
+            {/* Right Section */}
+            <div className="flex items-center justify-center h-14">
+              <div className="flex items-center justify-center h-full px-4 text-xs font-medium border-x border-gray-200">
+                <p>641</p>
+                <ChevronDown className="h-4 w-4 ml-1 text-[#3B2864]" />
+              </div>
+
+              {[...Array(6)].map((_, j) => (
+                <div
+                  key={j}
+                  className={`flex items-center justify-center h-full w-14 text-xs font-medium ${j < 5 ? "border-r border-gray-200" : ""
+                    }`}
+                >
+                  2.23
+                </div>
+              ))}
             </div>
-            <div className="flex gap-1">
-              <Star size={19} className="text-[#3B2864]" />
-              <Pin size={19} className="text-[#3B2864]" />
-              <Pin size={19} className="text-[#3B2864]" />
-              <BarChart3 size={19} className="text-[#3B2864]" />
-              <BarChart3 size={19} className="text-[#3B2864]" />
-            </div>
-          </div>
-          <div className="flex items-center justify-center h-14">
-            <div className="flex items-center justify-center h-full px-4 text-xs font-medium border-x border-gray-200">
-              <p>641</p>
-              <ChevronDown className="h-4 w-4 ml-1 text-[#3B2864]" />
-            </div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium">2.23</div>
           </div>
         </div>
-        <div className="border-b h-full border-gray-200 flex items-center justify-between gap-5">
-          <div className="h-14 pl-4 flex items-center gap-5">
-            <div className="mr-4">
-              <p className="text-[10px] text-gray-400">11.05.25</p>
-              <p className="text-[10px] text-gray-400">6:00 PM</p>
-            </div>
-            <div className="w-40">
-              <p className="text-xs text-[#3B2864] font-medium">Sivasspor</p>
-              <p className="text-xs text-[#3B2864] font-medium line-clamp-1">
-                Bodrum Belediyesi Bordrums ddddd
-              </p>
-            </div>
-            <div className="flex gap-1">
-              <Star size={19} className="text-[#3B2864]" />
-              <Pin size={19} className="text-[#3B2864]" />
-              <Pin size={19} className="text-[#3B2864]" />
-              <BarChart3 size={19} className="text-[#3B2864]" />
-              <BarChart3 size={19} className="text-[#3B2864]" />
-            </div>
-          </div>
-          <div className="flex items-center justify-center h-14">
-            <div className="flex items-center justify-center h-full px-4 text-xs font-medium border-x border-gray-200">
-              <p>641</p>
-              <ChevronDown className="h-4 w-4 ml-1 text-[#3B2864]" />
-            </div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium">2.23</div>
-          </div>
-        </div>
-        <div className="border-b h-full border-gray-200 flex items-center justify-between gap-5">
-          <div className="h-14 pl-4 flex items-center gap-5">
-            <div className="mr-4">
-              <p className="text-[10px] text-gray-400">11.05.25</p>
-              <p className="text-[10px] text-gray-400">6:00 PM</p>
-            </div>
-            <div className="w-40">
-              <p className="text-xs text-[#3B2864] font-medium">Sivasspor</p>
-              <p className="text-xs text-[#3B2864] font-medium line-clamp-1">
-                Bodrum Belediyesi Bordrums ddddd
-              </p>
-            </div>
-            <div className="flex gap-1">
-              <Star size={19} className="text-[#3B2864]" />
-              <Pin size={19} className="text-[#3B2864]" />
-              <Pin size={19} className="text-[#3B2864]" />
-              <BarChart3 size={19} className="text-[#3B2864]" />
-              <BarChart3 size={19} className="text-[#3B2864]" />
-            </div>
-          </div>
-          <div className="flex items-center justify-center h-14">
-            <div className="flex items-center justify-center h-full px-4 text-xs font-medium border-x border-gray-200">
-              <p>641</p>
-              <ChevronDown className="h-4 w-4 ml-1 text-[#3B2864]" />
-            </div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium">2.23</div>
-          </div>
-        </div>
-        <div className="border-b h-full border-gray-200 flex items-center justify-between gap-5">
-          <div className="h-14 pl-4 flex items-center gap-5">
-            <div className="mr-4">
-              <p className="text-[10px] text-gray-400">11.05.25</p>
-              <p className="text-[10px] text-gray-400">6:00 PM</p>
-            </div>
-            <div className="w-40">
-              <p className="text-xs text-[#3B2864] font-medium">Sivasspor</p>
-              <p className="text-xs text-[#3B2864] font-medium line-clamp-1">
-                Bodrum Belediyesi Bordrums ddddd
-              </p>
-            </div>
-            <div className="flex gap-1">
-              <Star size={19} className="text-[#3B2864]" />
-              <Pin size={19} className="text-[#3B2864]" />
-              <Pin size={19} className="text-[#3B2864]" />
-              <BarChart3 size={19} className="text-[#3B2864]" />
-              <BarChart3 size={19} className="text-[#3B2864]" />
-            </div>
-          </div>
-          <div className="flex items-center justify-center h-14">
-            <div className="flex items-center justify-center h-full px-4 text-xs font-medium border-x border-gray-200">
-              <p>641</p>
-              <ChevronDown className="h-4 w-4 ml-1 text-[#3B2864]" />
-            </div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium">2.23</div>
-          </div>
-        </div>
-        <div className="border-b h-full border-gray-200 flex items-center justify-between gap-5">
-          <div className="h-14 pl-4 flex items-center gap-5">
-            <div className="mr-4">
-              <p className="text-[10px] text-gray-400">11.05.25</p>
-              <p className="text-[10px] text-gray-400">6:00 PM</p>
-            </div>
-            <div className="w-40">
-              <p className="text-xs text-[#3B2864] font-medium">Sivasspor</p>
-              <p className="text-xs text-[#3B2864] font-medium line-clamp-1">
-                Bodrum Belediyesi Bordrums ddddd
-              </p>
-            </div>
-            <div className="flex gap-1">
-              <Star size={19} className="text-[#3B2864]" />
-              <Pin size={19} className="text-[#3B2864]" />
-              <Pin size={19} className="text-[#3B2864]" />
-              <BarChart3 size={19} className="text-[#3B2864]" />
-              <BarChart3 size={19} className="text-[#3B2864]" />
-            </div>
-          </div>
-          <div className="flex items-center justify-center h-14">
-            <div className="flex items-center justify-center h-full px-4 text-xs font-medium border-x border-gray-200">
-              <p>641</p>
-              <ChevronDown className="h-4 w-4 ml-1 text-[#3B2864]" />
-            </div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium">2.23</div>
-          </div>
-        </div>
-        <div className="border-b h-full border-gray-200 flex items-center justify-between gap-5">
-          <div className="h-14 pl-4 flex items-center gap-5">
-            <div className="mr-4">
-              <p className="text-[10px] text-gray-400">11.05.25</p>
-              <p className="text-[10px] text-gray-400">6:00 PM</p>
-            </div>
-            <div className="w-40">
-              <p className="text-xs text-[#3B2864] font-medium">Sivasspor</p>
-              <p className="text-xs text-[#3B2864] font-medium line-clamp-1">
-                Bodrum Belediyesi Bordrums ddddd
-              </p>
-            </div>
-            <div className="flex gap-1">
-              <Star size={19} className="text-[#3B2864]" />
-              <Pin size={19} className="text-[#3B2864]" />
-              <Pin size={19} className="text-[#3B2864]" />
-              <BarChart3 size={19} className="text-[#3B2864]" />
-              <BarChart3 size={19} className="text-[#3B2864]" />
-            </div>
-          </div>
-          <div className="flex items-center justify-center h-14">
-            <div className="flex items-center justify-center h-full px-4 text-xs font-medium border-x border-gray-200">
-              <p>641</p>
-              <ChevronDown className="h-4 w-4 ml-1 text-[#3B2864]" />
-            </div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium border-r border-gray-200">2.23</div>
-            <div className="flex items-center justify-center h-full w-14 text-xs font-medium">2.23</div>
-          </div>
-        </div>
-      </div>
+      ))}
+
+
     </div>
   );
 };

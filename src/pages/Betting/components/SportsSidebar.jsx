@@ -17,7 +17,8 @@ import sportsdummy from "@/assets/sportsdummy.png";
 import soccer from "@/assets/soccer.png";
 import map from "@/assets/map.png";
 import topChampionships from '../topChampionship.json';
-import popularSports from '../popularSports.json' 
+import popularSports from '../popularSports.json'
+import { useSite } from "@/context/SiteContext";
 // import { Input } from '@/components/ui/input';
 
 const SportsSidebar = () => {
@@ -32,7 +33,41 @@ const SportsSidebar = () => {
   const [isEnglandOpen, setIsEnglandOpen] = useState(false);
   const [isSpainOpen, setIsSpainOpen] = useState(false);
   const navigate = useNavigate();
+  const { language } = useSite()
   console.log(topChampionships)
+
+  const translations = {
+    all: {
+      turkish: "Hepsi",
+      english: "All"
+    },
+    football: {
+      turkish: "Futbol",
+      english: "Football"
+    },
+    basketball: {
+      turkish: "Basketbol",
+      english: "Basketball"
+    },
+    tennis: {
+      turkish: "Tenis",
+      english: "Tennis"
+    }
+  };
+
+
+  let tempPopularSport;
+  let tempTopChampionship;
+
+  if (language === "turkish") {
+    tempPopularSport = popularSports.tr;
+    tempTopChampionship = topChampionships.tr;
+  } else {
+    tempPopularSport = popularSports.en;
+    tempTopChampionship = topChampionships.en;
+  }
+
+
 
   return (
     <div className="w-full">
@@ -40,10 +75,10 @@ const SportsSidebar = () => {
       <div className="rounded-md overflow-hidden">
         <div className="flex w-full">
           <div className="flex-1 bg-[#3B2864] text-sm text-white py-4 px-6 text-center font-medium">
-            Sports (2816)
+            {language === "turkish" ? "Maç Öncesi (2816)" : "Sports (2816)"}
           </div>
           <div className="flex-1 bg-[#200B4D] text-sm text-white py-4 px-6 text-center font-medium border-l border-purple-800">
-            Live (105)
+            {language === "turkish" ? "Canlı (105)" : "Live (105)"}
           </div>
         </div>
 
@@ -54,10 +89,11 @@ const SportsSidebar = () => {
               <SelectValue placeholder="All" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All</SelectItem>
-              <SelectItem value="football">Football</SelectItem>
-              <SelectItem value="basketball">Basketball</SelectItem>
-              <SelectItem value="tennis">Tennis</SelectItem>
+              <SelectItem value="all">{translations.all[language]}</SelectItem>
+              <SelectItem value="football">{translations.football[language]}</SelectItem>
+              <SelectItem value="basketball">{translations.basketball[language]}</SelectItem>
+              <SelectItem value="tennis">{translations.tennis[language]}</SelectItem>
+
             </SelectContent>
           </Select>
           <div>
@@ -79,7 +115,7 @@ const SportsSidebar = () => {
           onOpenChange={setIsTopChampionshipsOpen}
         >
           <CollapsibleTrigger className="flex justify-between rounded-t-md items-center w-full bg-[#3B2864] text-white px-4 py-4">
-            <span className="font-medium text-sm">Top Championships</span>
+            <span className="font-medium text-sm">{language === "turkish" ? "Popüler Ligler" : "Top Championships"}</span>
             {isTopChampionshipsOpen ? (
               <ChevronUp className="h-5 w-5" />
             ) : (
@@ -89,7 +125,7 @@ const SportsSidebar = () => {
           <CollapsibleContent className="bg-white border-b">
             <div className="py-4 px-4 flex flex-col gap-4">
               {
-                topChampionships.map((champion) => (
+                tempTopChampionship.map((champion) => (
                   <div
                     onClick={() => navigate('/login')}
                     className="border-b border-gray-200 pb-4 cursor-pointer" key={champion.id}>
@@ -113,7 +149,7 @@ const SportsSidebar = () => {
           onOpenChange={setIsPopularSportsOpen}
         >
           <CollapsibleTrigger className="flex justify-between rounded-t-md items-center w-full bg-[#3B2864] text-white px-4 py-4">
-            <span className="font-medium text-sm">Popular Sports</span>
+            <span className="font-medium text-sm">{language === "turkish" ? "Popüler Sporlar" : "Popular Sports"}</span>
             {isPopularSportsOpen ? (
               <ChevronUp className="h-5 w-5" />
             ) : (
@@ -123,7 +159,7 @@ const SportsSidebar = () => {
           <CollapsibleContent className="bg-white border-b">
             <div className="py-4 px-4 flex flex-col gap-4">
               {
-                popularSports.map((popular) => (
+                tempPopularSport.map((popular) => (
                   <div
                     onClick={() => navigate('/login')}
                     className="flex border-b border-gray-200 pb-4 cursor-pointer justify-between" key={popular.id}>
@@ -131,7 +167,7 @@ const SportsSidebar = () => {
                       <img src={popular.image} className="w-8 h-8" alt="" />
                       <p className="text-xs">{popular.title}</p>
                     </div>
-                      <p className="text-xs">{popular.numbers}</p>
+                    <p className="text-xs">{popular.numbers}</p>
                   </div>
                 ))
               }
