@@ -6,6 +6,7 @@ import SubNavbar from "@/component/SubNavbar";
 import Carousel from "@/component/Carousel";
 import Footer from "@/component/Footer";
 import MobileSubNavbar from "@/component/MobileSubNavbar";
+import TabCardsCarousel from "./components/TabCardsCarousel";
 
 const Home = () => {
   return (
@@ -15,7 +16,12 @@ const Home = () => {
         <SubNavbar />
       </div>
       <Carousel />
-      <TabCards />
+     <div className="hidden md:block">
+       <TabCards />
+     </div>
+      <div className="md:hidden">
+        <TabCardsCarousel/>
+      </div>
       <div className="block lg:hidden">
         <MobileSubNavbar />
       </div>

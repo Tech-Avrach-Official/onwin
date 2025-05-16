@@ -20,12 +20,12 @@ const Navbar = () => {
     setLanguage(value);
   };
   return (
-    <div className="px-5 md:px-28 border-t-2 border-[#C625AC] flex justify-between items-center py-5 bg-[#201633] text-white">
-      <div className="flex items-center gap-2">
-      <div>
+    <div className="px-5 xl:px-28 border-t-2 border-[#C625AC] flex justify-between items-center py-5 bg-[#201633] text-white">
+      <div className="flex items-center justify-center gap-2">
+      <div className="md:hidden">
         <SideNavbar/>
       </div>
-        <img src={Logo} alt="Logo" className="w-28 md:w-36" />
+        <img src={Logo} alt="Logo" className="w-20 md:w-36" />
       </div>
       <div className="flex items-center justify-center gap-10">
         <div className="hidden md:flex items-center justify-center gap-3">
@@ -60,12 +60,12 @@ const Navbar = () => {
         </div>
         <div className="flex gap-2">
           <Link to="/register">
-            <button className="text-sm md:text-base bg-gradient-to-t from-gray-500 to-gray-200 text-black font-bold md:px-8 px-5 py-2 rounded">
+            <button className="text-xs md:text-base bg-gradient-to-t from-gray-500 to-gray-200 text-black font-bold md:px-8 px-3 py-1 rounded">
               KAYIT OL
             </button>
           </Link>
           <Link to="/login">
-            <button className="text-sm md:text-base bg-gradient-to-t from-yellow-600 to-yellow-300 text-black font-bold md:px-8 px-5 py-2 rounded">
+            <button className="text-xs md:text-base bg-gradient-to-t from-yellow-600 to-yellow-300 text-black font-bold md:px-8 px-3 py-1 rounded">
               GİRİŞ YAP
             </button>
           </Link>
