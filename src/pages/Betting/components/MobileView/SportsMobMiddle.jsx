@@ -23,7 +23,20 @@ const SportsMobMiddle = () => {
     <div>
       <div>
         <div className="bg-white border-b overflow-hidden w-full max-w-full ">
-          <div> {/* <SportsCarousel /> */}</div>
+          <div className="bg-gray-200 py-1 flex items-center justify-center gap-5 overflow-x-auto hide-scrollbar">
+            <p className="text-xs text-center whitespace-nowrap">3 saat</p>
+            <p className="text-xs text-center whitespace-nowrap">3 saat</p>
+            <p className="text-xs text-center whitespace-nowrap">3 saat</p>
+            <p className="text-xs text-center whitespace-nowrap">3 saat</p>
+            <p className="text-xs text-center whitespace-nowrap">3 saat</p>
+            <p className="text-xs text-center whitespace-nowrap">3 saat</p>
+            <p className="text-xs text-center whitespace-nowrap">3 saat</p>
+            <p className="text-xs text-center whitespace-nowrap">3 saat</p>
+            <p className="text-xs text-center whitespace-nowrap">3 saat</p>
+            <p className="text-xs text-center whitespace-nowrap">3 saat</p>
+            <p className="text-xs text-center whitespace-nowrap">3 saat</p>
+
+          </div>
           <div>
             <DummyUi />
             <DummyUi />
