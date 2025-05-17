@@ -25,10 +25,12 @@ const TabBottomBar = () => {
            <ClipboardList size={20} className='text-white mx-auto'/>
             <p className='text-white text-center text-xs'>Tum Aporlar</p>
         </div>
+        <Link to="/live">
         <div>
            <TicketsPlane size={20} className='text-white mx-auto -rotate-12' />
             <p className='text-white text-center text-xs'>Canli</p>
         </div>
+        </Link>
     </div>
   )
 }
