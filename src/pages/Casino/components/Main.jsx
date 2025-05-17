@@ -3,10 +3,11 @@ import Sidebar from "./Sidebar";
 import SubHeader from "./SubHeader";
 import CardGrid from "./CardGrid";
 import games from '@/data/casino/games.json';
+import { useSite } from "@/context/SiteContext";
 
 const Main = () => {
   const [activeProvider, setActiveProvider] = useState("Ninja-gaming-lc");
-
+  const {language}=useSite()
   const cards = games;
 
   console.log(cards.length);
@@ -54,7 +55,7 @@ const Main = () => {
           onClick={handleLoadMore}
           className="bg-gradient-to-b from-white to-blue-100 hover:from-[#150443] hover:to-[#150443] text-black hover:text-white font-medium py-2 px-6 w-[100%] rounded-lg shadow transition duration-300 mb-5"
         >
-        Daha Fazla Gör
+        {language==='turkish'? "Daha Fazla Gör":"Load More"}
         </button>
         
                 </div>

@@ -1,22 +1,33 @@
 import React from "react";
-import esports from "../../../assets/esports.png";
+import esports1 from "../../../assets/esports/image1.png";
+import esports2 from "../../../assets/esports/image2.png";
+import esports3 from "../../../assets/esports/image3.png";
+import esports4 from "../../../assets/esports/image4.png";
+import esports5 from "../../../assets/esports/image5.png";
+import esports6 from "../../../assets/esports/image6.png";
+import esports7 from "../../../assets/esports/image7.png";
+import esports8 from "../../../assets/esports/image8.png";
+import esports9 from "../../../assets/esports/image9.png";
+import esports10 from "../../../assets/esports/image10.png";
+import esports11 from "../../../assets/esports/image11.png";
 
 const EsprotsSidebar = () => {
   const popularLeagues = [
-    { id: 1, image: esports },
-    { id: 2, image: esports },
-    { id: 3, image: esports },
-    { id: 4, image: esports },
+    { id: 1, image: esports1 },
+    { id: 2, image: esports2 },
+    { id: 3, image: esports3 },
+    { id: 4, image: esports4 },
   ];
 
-  const allEsports = [
-    { id: 1, name: "CS2", image: esports },
-    { id: 2, name: "Valorant", image: esports },
-    { id: 3, name: "Dota 2", image: esports },
-    { id: 4, name: "LoL", image: esports },
-    { id: 5, name: "PUBG", image: esports },
-    { id: 6, name: "Overwatch", image: esports },
-  ];
+const allEsports = [
+  { id: 1, name: "CS2", image: esports5 },
+  { id: 3, name: "Dota 2", image: esports6 },
+  { id: 4, name: "League of Legend", image: esports7 },
+  { id: 2, name: "Overwatch", image: esports8 },
+  { id: 5, name: "Rainbow Six", image: esports9 },
+  { id: 5, name: "Rocket Leauge", image: esports10 },
+  { id: 6, name: "Overwatch", image: esports11 },
+];
 
   return (
     <div>
