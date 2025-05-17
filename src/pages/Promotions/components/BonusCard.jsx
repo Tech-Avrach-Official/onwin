@@ -28,22 +28,23 @@ const bonusCards = [
 
 const BonusCard = () => {
   return (
-    <div className="w-full px-28 py-5">
-      <div className="grid grid-cols-2 gap-5">
+    <div className="w-full px-4 sm:px-6 md:px-10 lg:px-20 xl:px-28 py-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5">
         {bonusCards.map((card, index) => (
           <div
             key={index}
-            className="p-10 flex flex-col justify-between"
+            className="p-5 sm:p-6 md:p-8 flex flex-col justify-between shadow-md"
             style={{
               backgroundImage: `url(${card.img})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              height: '200px',
-              width: '100%',
+              height: '260px',
             }}
           >
-            <h1 className="text-lg text-white max-w-xs font-bold mb-5">{card.title}</h1>
-            <button className="bg-[#C625AC] text-white py-2 px-6 rounded-sm font-semibold text-base w-fit">
+            <h1 className="text-base sm:text-lg md:text-xl text-white font-bold mb-4 max-w-[90%]">
+              {card.title}
+            </h1>
+            <button className="bg-[#C625AC] text-white py-2 px-4 sm:px-6 rounded font-semibold text-sm sm:text-base w-fit">
               Detaylar
             </button>
           </div>

@@ -3,7 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import 'swiper/css/effect-fade'; // for fade effect
+import 'swiper/css/effect-fade';
+
 import car1 from "../../../assets/bonusimg/car1.webp";
 import car2 from "../../../assets/bonusimg/car2.png";
 import car3 from "../../../assets/bonusimg/car3.webp";
@@ -16,7 +17,6 @@ import car9 from "../../../assets/bonusimg/car9.png";
 import car10 from "../../../assets/bonusimg/car10.png";
 import car11 from "../../../assets/bonusimg/car11.png";
 
-// ✅ Step 1: Slide Data Array
 const bonusSlides = [
   { img: car1, title: "İLK 3 YATIRIMA 36.000 TL HOŞ GELDİN BONUSU", desc: "İlk 3 Yatırıma %100 Bonus Sizi Bekliyor" },
   { img: car2, title: "750 TL DENEME BONUSU FIRSATI !", desc: "500 TL ÇEKİM İMKANI !" },
@@ -32,45 +32,44 @@ const bonusSlides = [
 ];
 
 const BonusCarousel = () => {
-    return (
-        <div className="w-full px-28 flex items-center justify-center relative">
-          
-          {/* ✅ Move pagination container outside of Swiper */}
-          <div className="custom-pagination absolute bottom-10 left-32 z-10" />
+  return (
+    <div className="w-full px-4 sm:px-10 md:px-20 lg:px-28 flex items-center justify-center relative">
       
-          <Swiper
-            loop={true}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            effect="fade"
-            pagination={{
-              el: '.custom-pagination',
-              clickable: true,
-              renderBullet: (index, className) => {
-                return `<span class="bonus-custom-bullet ${className}"></span>`;
-              },
-            }}
-            modules={[Autoplay, Pagination, EffectFade]}
-            className="w-full"
-          >
-            {bonusSlides.map((slide, index) => (
-              <SwiperSlide key={index} className="w-full h-full flex items-center justify-center">
-                <div className="w-full h-full relative">
-                  <img src={slide.img} alt={`slide-${index}`} className="w-full h-full object-cover" />
-                  <div className="absolute top-16 left-32 text-white">
-                    <h1 className="text-3xl font-bold mb-2">{slide.title}</h1>
-                    <p className="mb-4">{slide.desc}</p>
-                    <button className="bg-[#C625AC] text-white py-2 px-4 rounded-md">Detaylar</button>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      );
-      
+      {/* Pagination Container */}
+      {/* <div className="custom-pagination absolute bottom-5 sm:bottom-8 md:bottom-10 left-4 sm:left-10 md:left-20 z-10" /> */}
+
+      <Swiper
+        loop={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        effect="fade"
+        pagination={{
+          el: '.custom-pagination',
+          clickable: true,
+          renderBullet: (index, className) => {
+            return `<span class="bonus-custom-bullet ${className}"></span>`;
+          },
+        }}
+        modules={[Autoplay, Pagination, EffectFade]}
+        className="w-full"
+      >
+        {bonusSlides.map((slide, index) => (
+          <SwiperSlide key={index} className="w-full h-full flex items-center justify-center">
+            <div className="w-full h-full relative">
+              <img src={slide.img} alt={`slide-${index}`} className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] object-cover" />
+              <div className="absolute top-8 sm:top-10 md:top-16 left-4 sm:left-10 md:left-20 text-white max-w-[90%] sm:max-w-[80%] md:max-w-[60%]">
+                <h1 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2">{slide.title}</h1>
+                <p className="text-sm sm:text-base md:text-lg mb-4">{slide.desc}</p>
+                <button className="bg-[#C625AC] text-white py-1 px-3 sm:py-2 sm:px-4 text-sm sm:text-base rounded-md">Detaylar</button>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  );
 };
 
 export default BonusCarousel;

@@ -53,7 +53,7 @@ const AllRoutes = () => {
             <Route path="/register" element={<Register/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/esports" element={<Esports/>} />
-            <Route path="/bonuses" element={<Promptions/>} />
+            <Route path="/promotions" element={<Promptions/>} />
             {/* Catch-all route */}
             <Route path="*" element={<Home />} />
         </Routes>

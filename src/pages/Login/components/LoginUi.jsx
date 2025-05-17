@@ -6,9 +6,9 @@ const LoginUi = () => {
   const [showPassword, setShowPassword] = useState(false);
   
   return (
-    <div className="w-full pt-10 h-screen flex  justify-center bg-white relative overflow-hidden">
+    <div className="w-full pt-10 h-screen flex  justify-center bg-white relative overflow-hidden p-4">
       {/* Decorative diagonal stripes - top right */}
-      <img src={registerbg} className='w-full h-screen object-contain absolute top-0' alt="" />
+      <img src={registerbg} className='w-full h-screen object-contain absolute top-0 hidden md:block' alt="" />
       
       {/* Login Container */}
       <div className="w-full max-w-md z-10">
