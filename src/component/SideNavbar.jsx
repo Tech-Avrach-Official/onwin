@@ -13,25 +13,24 @@ import { Menu } from "lucide-react";
 import dummy from '/subNavbar/image10.png';
 
 const menuItems = [
-  { label: "Bahis", path: "/betting", image: dummy },
-  { label: "Canli Bahis", path: "/live", image: dummy },
-  { label: "Esports", path: "/esports", image: dummy },
-  { label: "Casino", path: "/casino", image: dummy },
-  { label: "Oyunlar", path: "/games", image: dummy },
-  { label: "Tombala", path: "/tombala", image: dummy },
-  { label: "Bahis", path: "/betting", image: dummy },
-  { label: "Canli Bahis", path: "/live", image: dummy },
-  { label: "Esports", path: "/esports", image: dummy },
-  { label: "Casino", path: "/casino", image: dummy },
-  { label: "Oyunlar", path: "/games", image: dummy },
-  { label: "Tombala", path: "/tombala", image: dummy },
-  { label: "Tombala", path: "/tombala", image: dummy },
-  { label: "Bahis", path: "/betting", image: dummy },
-  { label: "Canli Bahis", path: "/live", image: dummy },
-  { label: "Esports", path: "/esports", image: dummy },
-  { label: "Casino", path: "/casino", image: dummy },
-  { label: "Oyunlar", path: "/games", image: dummy },
-  { label: "Tombala", path: "/tombala", image: dummy },
+  { label: "BAHİS", path: "/betting", icon: "fa-solid fa-futbol" },
+  { label: "CANLI BAHİS", path: "/live", icon: "fa fa-stopwatch" },
+  { label: "Esports", path: "/esports", icon: "fa fa-gamepad" },
+  { label: "SANAL BAHİS", path: "/virtual", icon: "fab fa-cloudsmith" },
+  { label: "CANLI CASİNO", path: "/live-casino", icon: "fa fa-dice-five" },
+  { label: "Slot", path: "/casino", icon: "fa fa-coins" },
+  { label: "JetX", path: "/", icon: " fa fa-chess-board" },
+  { label: "Raptor", path: "/", icon: "fa fa-chess-board" },
+  { label: "Zeplin", path: "/", icon: "fa fa-chess-board" },
+  { label: "Spaceman", path: "/", icon: "fa fa-chess-board" },
+  { label: "OnwinX", path: "/", icon: "fa fa-chess-board" },
+  { label: "Oyunlar", path: "/games", icon: "fa-solid fa-triangle-exclamation" },
+  { label: "Lotto", path: "/parlayboy", icon: "fa-brands fa-bots" },
+  { label: "TOMBALA", path: "/login", icon: "fa fa-chess-board" },
+  { label: "ZEPPELIN", path: "/login", icon: "fab fa-fly" },
+  { label: "Spaceman", path: "/", icon: " fa-square" },
+  { label: "PROMOSYONLAR", path: "/promotions", icon: "far fa-bullhorn" },
+  { label: "Onwin TV", path: "/", icon: "fa fa-tv" },
 ];
 
 const SideNavbar = () => {
@@ -54,7 +53,7 @@ const SideNavbar = () => {
             <div className="flex flex-col gap-4 mt-5">
               {menuItems.map((item, index) => (
                 <Link to={item.path} key={index} className="flex items-center gap-2 hover:opacity-80">
-                  <img src={item.image} alt={item.label} className="w-6" />
+                  {item.icon && <i className={`${item.icon} text-xl`}></i>}
                   <p className="text-sm font-normal">{item.label}</p>
                 </Link>
               ))}

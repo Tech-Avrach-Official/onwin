@@ -25,7 +25,9 @@ const Navbar = () => {
       <div className="md:hidden">
         <SideNavbar/>
       </div>
+        <Link to="/">
         <img src={Logo} alt="Logo" className="w-20 md:w-36" />
+        </Link>
       </div>
       <div className="flex items-center justify-center gap-10">
         <div className="hidden md:flex items-center justify-center gap-3">
