@@ -4,8 +4,9 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useSite } from '@/context/SiteContext';
 
-const sports = [
+const sportsEn = [
   { icon: '⚽', name: 'Football' },
   { icon: '🏀', name: 'Basketball' },
   { icon: '🏈', name: 'American Football' },
@@ -27,13 +28,43 @@ const sports = [
   { icon: '🏒', name: 'Hockey' },
   { icon: '🥊', name: 'Boxing' },
 ];
+const sportsTr = [
+  { icon: '⚽', name: 'Futbol' },
+  { icon: '🏀', name: 'Basketbol' },
+  { icon: '🏈', name: 'Amerikan Futbolu' },
+  { icon: '🏐', name: 'Voleybol' },
+  { icon: '🏏', name: 'Kriket' },
+  { icon: '🏸', name: 'Badminton' },
+  { icon: '🥍', name: 'Lakros' },
+  { icon: '🏓', name: 'Masa Tenisi' },
+  { icon: '🏒', name: 'Buz Hokeyi' },
+  { icon: '🥊', name: 'Boks' },
+  { icon: '⚽', name: 'Futbol' },
+  { icon: '🏀', name: 'Basketbol' },
+  { icon: '🏈', name: 'Amerikan Futbolu' },
+  { icon: '🏐', name: 'Voleybol' },
+  { icon: '🏏', name: 'Kriket' },
+  { icon: '🏸', name: 'Badminton' },
+  { icon: '🥍', name: 'Lakros' },
+  { icon: '🏓', name: 'Masa Tenisi' },
+  { icon: '🏒', name: 'Buz Hokeyi' },
+  { icon: '🥊', name: 'Boks' },
+];
+
 
 const LiveCarousel = () => {
   const swiperRef = useRef(null);
+  const {language}=useSite()
 
   const slideNext = () => swiperRef.current?.swiper.slideNext();
   const slidePrev = () => swiperRef.current?.swiper.slidePrev();
-
+ 
+  let sports;
+  if(language==='turkish'){
+    sports=sportsTr;
+  }else{
+    sports=sportsEn;
+  }
   return (
     <div className="relative w-full py-4 bg-white">
       <button

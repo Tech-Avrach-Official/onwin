@@ -13,7 +13,7 @@ export const SiteProvider = ({ children }) => {
   // Sync language state to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem('language', language);
-    console.log('Language saved to localStorage:', language);
+    // console.log('Language saved to localStorage:', language);
   }, [language]);
 
   return (
