@@ -1,65 +1,61 @@
 import React, { useState } from "react";
 
 const sidebarItems = [
-  { name: "Tüm Sağlayıcılar", icon: "/providers/all.png" },
-  { name: "Pragmaticplay", count: 347, icon: "/providers/pragmaticplay.png" },
-  { name: "Ninijagaming", count: 26, icon: "/providers/ninijagaming.png" },
-  { name: "Bolt-Gaming", count: 26, icon: "/providers/bolt-gaming.png" },
-  { name: "Playtech", count: 277, icon: "/providers/playtech.png" },
-  { name: "Rubyplay", count: 131, icon: "/providers/rubyplay.png" },
-  { name: "Bgaming", count: 141, icon: "/providers/bgaming.png" },
-  { name: "Exgaming", count: 10, icon: "/providers/exgaming.png" },
-  { name: "Yggdrasil", count: 355, icon: "/providers/yggdrasil.png" },
-  { name: "Betsoft", count: 173, icon: "/providers/betsoft.png" },
-  { name: "Hacksaw", count: 142, icon: "/providers/hacksaw.png" },
-  { name: "Octoplay", count: 3, icon: "/providers/octoplay.png" },
-  { name: "Fugaso", count: 67, icon: "/providers/fugaso.png" },
-  { name: "Platipus", count: 111, icon: "/providers/platipus.png" },
-  { name: "Redtiger", count: 300, icon: "/providers/redtiger.png" },
-  { name: "Booming", count: 135, icon: "/providers/booming.png" },
-  { name: "Redrake", count: 106, icon: "/providers/redrake.png" },
-  { name: "Netent", count: 172, icon: "/providers/netent.png" },
-  { name: "Bfgames", count: 100, icon: "/providers/bfgames.png" },
-  { name: "Swintt", count: 131, icon: "/providers/swintt.png" },
-  { name: "Playson", count: 77, icon: "/providers/playson.png" },
-  { name: "Nolimitcity", count: 105, icon: "/providers/nolimitcity.png" },
-  { name: "Endorphina", count: 145, icon: "/providers/endorphina.png" },
-  { name: "Retro", count: 8, icon: "/providers/retro.png" },
-  { name: "PG Pgsoft", count: 51, icon: "/providers/pg-pgsoft.png" },
-  { name: "Spadegaming", count: 79, icon: "/providers/spadegaming.png" },
-  { name: "Quickspin", count: 112, icon: "/providers/quickspin.png" },
-  { name: "Leap", count: 28, icon: "/providers/leap.png" },
-  { name: "Onetouch", count: 43, icon: "/providers/onetouch.png" },
-  { name: "Booongo", count: 33, icon: "/providers/booongo.png" },
-  { name: "Habanero", count: 170, icon: "/providers/habanero.png" },
-  { name: "Tomhorn", count: 38, icon: "/providers/tomhorn.png" },
-  { name: "Relaxgaming", count: 150, icon: "/providers/relaxgaming.png" },
-  { name: "Nucleus", count: 55, icon: "/providers/nucleus.png" },
-  { name: "Spinomenal", count: 429, icon: "/providers/spinomenal.png" },
-  { name: "Sthlm", count: 2, icon: "/providers/sthlm.png" },
-  { name: "Smartsoft", count: 3, icon: "/providers/smartsoft.png" },
-  { name: "Kalamba", count: 131, icon: "/providers/kalamba.png" },
-  { name: "Apollo", count: 42, icon: "/providers/apollo.png" },
-  { name: "High5", count: 1, icon: "/providers/high5.png" },
-  { name: "Ggames", count: 62, icon: "/providers/ggames.png" },
-  { name: "Evoplay", count: 195, icon: "/providers/evoplay.png" },
-  { name: "Eurasian", count: 96, icon: "/providers/eurasian.png" },
-  { name: "Bigtime", count: 64, icon: "/providers/bigtime.png" },
-  { name: "Theear", count: 16, icon: "/providers/theear.png" },
-  { name: "Revolver", count: 4, icon: "/providers/revolver.png" },
-  { name: "Amatic", count: 106, icon: "/providers/amatic.png" },
-  { name: "Vgs", count: 11, icon: "/providers/vgs.png" },
-  { name: "Gameart", count: 61, icon: "/providers/gameart.png" },
-  { name: "Oryx", count: 9, icon: "/providers/oryx.png" },
-  { name: "2by2", count: 15, icon: "/providers/2by2.png" },
-  { name: "Reevo", count: 3, icon: "/providers/reevo.png" },
-  { name: "Zeus", count: 3, icon: "/providers/zeus.png" },
-  { name: "Yolted", count: 15, icon: "/providers/yolted.png" },
-  { name: "Rogue", count: 1, icon: "/providers/rogue.png" },
-  { name: "Egt digital", count: 148, icon: "/providers/egtdigital.png" },
-  { name: "Amusnet", count: 191, icon: "/providers/amusnet.png" },
-  { name: "Wazdan", count: 237, icon: "/providers/wazdan.png" },
-  { name: "Ezugi", count: 56, icon: "/providers/ezugi.png" }
+  
+  { name: "Pragmaticplay", count: 351, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/pragmaticplay.svg" },
+  { name: "Ninjagaming", count: 29, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/ninjagaming.svg" },
+  { name: "Bolt-gaming", count: 27, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/bolt-gaming.svg" },
+  { name: "Playtech", count: 277, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/playtech.svg" },
+  { name: "Rubyplay", count: 133, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/rubyplay.svg" },
+  { name: "Bgaming", count: 143, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/bgaming.svg" },
+  { name: "Exagaming", count: 10, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/exagaming.svg" },
+  { name: "Yggdrasil", count: 362, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/yggdrasil.svg" },
+  { name: "Betsoft", count: 174, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/betsoft.svg" },
+  { name: "Hacksaw", count: 142, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/hacksaw.svg" },
+  { name: "Octoplay", count: 4, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/octoplay.svg" },
+  { name: "Fugaso", count: 67, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/fugaso.svg" },
+  { name: "Platipus", count: 112, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/platipus.svg" },
+  { name: "Redtiger", count: 301, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/redtiger.svg" },
+  { name: "Booming", count: 136, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/booming.svg" },
+  { name: "Redrake", count: 106, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/redrake.svg" },
+  { name: "Netent", count: 173, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/netent.svg" },
+  { name: "Bfgames", count: 102, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/bfgames.svg" },
+  { name: "Swintt", count: 131, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/swintt.svg" },
+  { name: "Playson", count: 78, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/playson.svg" },
+  { name: "Nolimitcity", count: 105, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/nolimitcity.svg" },
+  { name: "Endorphina", count: 146, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/endorphina.svg" },
+  { name: "Retro", count: 8, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/retro.svg" },
+  { name: "Pgsoft", count: 51, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/pgsoft.svg" },
+  { name: "Spadegaming", count: 80, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/spadegaming.svg" },
+  { name: "Quickspin", count: 112, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/quickspin.svg" },
+  { name: "Leap", count: 28, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/leap.svg" },
+  { name: "Onetouch", count: 43, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/onetouch.svg" },
+  { name: "Booongo", count: 33, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/booongo.svg" },
+  { name: "Habanero", count: 170, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/habanero.svg" },
+  { name: "Tomhorn", count: 38, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/tomhorn.svg" },
+  { name: "Relaxgaming", count: 150, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/relaxgaming.svg" },
+  { name: "Nucleus", count: 55, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/nucleus.svg" },
+  { name: "Spinomenal", count: 434, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/spinomenal.svg" },
+  { name: "Sthlm", count: 2, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/sthlm.svg" },
+  { name: "Smartsoft", count: 3, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/smartsoft.svg" },
+  { name: "Kalamba", count: 132, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/kalamba.svg" },
+  { name: "Apollo", count: 42, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/apollo.svg" },
+  { name: "High5", count: 2, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/high5.svg" },
+  { name: "Ggames", count: 63, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/ggames.svg" },
+  { name: "Evoplay", count: 195, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/evoplay.svg" },
+  { name: "Eurasian", count: 96, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/eurasian.svg" },
+  { name: "Bigtime", count: 64, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/bigtime.svg" },
+  { name: "Theear", count: 16, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/theear.svg" },
+  { name: "Revolver", count: 4, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/revolver.svg" },
+  { name: "Amatic", count: 106, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/amatic.svg" },
+  { name: "Vgs", count: 11, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/vgs.svg" },
+  { name: "Gameart", count: 61, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/gameart.svg" },
+  { name: "Oryx", count: 9, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/oryx.svg" },
+  { name: "Yolted", count: 15, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/yolted.svg" },
+  { name: "Rogue", count: 1, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/rogue.svg" },
+  { name: "Egtdigital", count: 148, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/egtdigital.svg" },
+  { name: "Amusnet", count: 192, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/amusnet.svg" },
+  { name: "Wazdan", count: 237, icon: "https://cloudcdn.owcontent.com/assets/svg/providers/wazdan.svg" }
 ];
 
 const Sidebar = () => {
@@ -68,7 +64,7 @@ const Sidebar = () => {
   return (
     <div className="bg-[#f2f2f2f2] h-full overflow-y-auto flex flex-col gap-1">
       <div className="bg-[#c625ac] text-white font-bold p-4 flex items-center gap-2">
-        <img src="/images/dice-icon.png" alt="Sağlayıcılar" className="w-5 h-5" />
+        <img src="https://www.onwin2400.com/assets-ow/casino/img/icons/providers/providers.svg" alt="Sağlayıcılar" className="w-5 h-5" />
         <span>Sağlayıcılar</span>
       </div>
 
@@ -80,7 +76,7 @@ const Sidebar = () => {
             ${activeItem === item.name ? "text-[#c625ac] " : "hover:text-[#c625ac]"}`}
         >
           <div className="flex items-center gap-2">
-            <img src={item.image} alt={item.name} className="w-5 h-5" />
+            <img src={item.icon} alt={item.name} className="w-5 h-5" />
             <span className="text-sm font-medium">{item.name}</span>
           </div>
           <span className="text-sm font-semibold">{item.count}</span>

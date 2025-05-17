@@ -35,12 +35,12 @@ const Main = () => {
   return (
     <div className="flex gap-2 min-h-screen bg-[#f2f2f2] ">
       {/* Sidebar (17%) */}
-      <div className="w-[17%]">
+      <div className="hidden lg:block w-[17%]">
         <Sidebar />
       </div>
 
       {/* Main content (remaining) */}
-      <div className="w-[83%] overflow-y-auto">
+      <div className="w-full lg:w-[83%] overflow-y-aut">
         {/* Sub-header with filters */}
         <SubHeader activeProvider={activeProvider} setActiveProvider={setActiveProvider} />
 
