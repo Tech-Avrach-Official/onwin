@@ -40,7 +40,7 @@ const SubNavbar = () => {
   const currentMenu = language === 'turkish' ? menuItems : menuItemsEn;
 
   return (
-    <div className='xl:px-28 bg-white'>
+    <div className='hidden md:block xl:px-28 bg-white'>
       <div className='flex items-center justify-center overflow-x-auto'>
         {currentMenu.map((item, index) => {
           const isActive = location.pathname === item.path;
