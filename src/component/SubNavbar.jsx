@@ -34,7 +34,7 @@ const SubNavbar = () => {
     { label: "Parlaybay", path: "/parlayboy", image: '/subNavbar/image10.png' },
     { label: "Tombola", path: "/login", image: demo },
     { label: "Esports", path: "/esports", image: '/subNavbar/image11.png' },
-    { label: "Promotions", path: "/promotions", image: "/subNavbar/image12.png" }
+    { label: "Promotions", path: "/bonuses", image: "/subNavbar/image12.png" }
   ];
 
   const currentMenu = language === 'turkish' ? menuItems : menuItemsEn;
