@@ -1,31 +1,79 @@
 import { useState } from "react";
 import { Search } from "lucide-react";
+import { useSite } from "@/context/SiteContext";
+import image1 from '../../../assets/Games/image1.png'
+import image2 from '../../../assets/Games/image2.png'
+import image3 from '../../../assets/Games/image3.png'
+import image4 from '../../../assets/Games/image4.png'
+import image5 from '../../../assets/Games/image5.svg'
+import image6 from '../../../assets/Games/image6.svg'
+import image7 from '../../../assets/Games/image7.svg'
+
+// const categoriesIcons={
+//   "Tümü":(
+
+//   )
+// }
 
 // Categories data (top tabs)
-const categories = [
-  { name: "Tümü", icon: "/icons/all.png" },
-  { name: "SMARTSOFT 6 MİLYON TL", icon: "/icons/favorite.png" },
-  { name: "YENİ OYUNLAR", icon: "/icons/new.png" },
-  { name: "%100 - 1000 TL BONUS", icon: "/icons/popular.png" },
-  { name: "POPÜLER", icon: "/icons/tournament.png" },
-  { name: "5.000.000 EURO TURNUVA", icon: "/icons/blackjack-bf.png" },
+const categoriesTr = [
+  { name: "Tümü"},
+  { name: "NinjaGamming"},
+  { name: "SMARTSOFT 6 MİLYON TL"},
+  { name: "YENİ OYUNLAR"},
+  { name: "%100 - 1000 TL BONUS"},
+  { name: "POPÜLER"},
+  { name: "5.000.000 EURO TURNUVA"},
+];
+const categoriesEn = [
+  { name: "All" },
+  { name: "NinjaGaming" },
+  { name: "SMARTSOFT 6 MILLION TL" },
+  { name: "NEW GAMES" },
+  { name: "100% - 1000 TL BONUS" },
+  { name: "POPULAR" },
+  { name: "5,000,000 EURO TOURNAMENT" },
 ];
 
+
 // Provider box data
-const providers = [
-    { name: "Tüm Sağlayıcılar", icon: "/providers/all.png" },
-    { name: "Golden Race", icon: "/providers/pragmaticplay.png" },
-    { name: "Kiron", icon: "/providers/ninijagaming.png" },
-    { name: "1x2", icon: "/providers/bolt-gaming.png" },
-    { name: "Leap", icon: "/providers/bolt-gaming.png" }
+const providersTr = [
+    { name: "Tüm Sağlayıcılar", icon:image1 },
+    { name: "Onwin Originals", icon: image2},
+    { name: "Flagcongamming", icon:image3},
+    { name: "SmartSoft", icon:image4 },
+    { name: "Tombala", icon:image5 },
+    { name: "BestSolutions", icon:image6 },
+    { name: "Studio21", icon:image7 },
   ];
-  
+  // Provider box data (English)
+const providersEn = [
+  { name: "All Providers", icon: image1 },
+  { name: "Onwin Originals", icon: image2 },
+  { name: "FlagconGaming", icon: image3 },
+  { name: "SmartSoft", icon: image4 },
+  { name: "Bingo", icon: image5 },
+  { name: "BestSolutions", icon: image6 },
+  { name: "Studio21", icon: image7 },
+];
+
 
 export default function Header() {
   const [active, setActive] = useState("Tümü");
   const [showProviderBox, setShowProviderBox] = useState(false);
   const [activeProvider, setActiveProvider] = useState("Tüm Sağlayıcılar");
   const [searchText, setSearchText] = useState("");
+  const {language}=useSite();
+
+  let categories;
+  let providers;
+  if(language==="turkish"){
+    categories=categoriesTr;
+    providers=providersTr;
+  }else{
+    categories=categoriesEn;
+    providers=providersEn;
+  }
 
   const toggleProviderBox = () => {
     setShowProviderBox((prev) => !prev);
@@ -49,7 +97,7 @@ export default function Header() {
           ${active === cat.name ? "text-pink-600 border-t-2 border-t-pink-600 font-semibold bg-white" : "text-[#524471] font-semibold"}
         `}
       >
-        <img src={cat.icon} alt={cat.name} className="w-4 h-4 object-contain" />
+        {/* <img src={cat.icon} alt={cat.name} className="w-4 h-4 object-contain" /> */}
         <span className="text-sm">{cat.name}</span>
       </div>
     ))}
@@ -61,7 +109,7 @@ export default function Header() {
       onClick={toggleProviderBox}
       className="whitespace-nowrap bg-white px-6 py-3 border text-sm hover:bg-gray-200 rounded-md"
     >
-      Sağlayıcı
+      {language==="turkish"?"Sağlayıcı":"Provider"}
     </button>
 
     {showProviderBox && (

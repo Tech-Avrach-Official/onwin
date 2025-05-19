@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import games from '../../../data/games/games.json'
+import { useSite } from '@/context/SiteContext'
 
 const Games = () => {
   const [visibleCount, setVisibleCount] = useState(40)
-
+  const {language}=useSite();
   const handleLoadMore = () => {
     setVisibleCount((prev) => prev + 40)
   }
@@ -37,7 +38,7 @@ const Games = () => {
   onClick={handleLoadMore}
   className="bg-gradient-to-b from-white to-blue-100 hover:from-[#150443] hover:to-[#150443] text-black hover:text-white font-medium py-2 px-6 w-[100%] rounded-lg shadow transition duration-300"
 >
-Daha Fazla Gör
+{language==="turkish"?"Daha Fazla Gör":"Load more"}
 </button>
 
         </div>
