@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const TabBottomBar = () => {
   return (
     <div className='bg-[#200B4D] sticky bottom-0 grid grid-cols-5 items-center justify-center py-2 mt-5 w-full'>
-        <Link to="/sportsbook">
+        <Link to="/esportsbook">
         <div>
             <p className='text-white text-center text-sm font-semibold'>AZ</p>
             <p className='text-white text-center text-xs'>Tum Aporlar</p>
@@ -17,7 +17,7 @@ const TabBottomBar = () => {
             <p className='text-white text-center text-xs'>Arama Yap</p>
         </div>
         </Link>
-        <Link to="/bet-slip">
+<Link to="/bet-slip">
         <div className='flex flex-col items-center'>
             <p className='flex justify-center items-center text-white bg-[#C625AC] w-5 h-5 rounded-full border border-white text-center text-xs font-semibold'>2</p>
             <p className='text-white text-center text-xs'>Tum Aporlar</p>

@@ -58,7 +58,7 @@ const EsportsMiddle = () => {
 
   return (
     <div>
-      <div className="hidden md:flex">
+      <div className="flex">
         {games.map((game, index) => (
           <div
             key={game.id}

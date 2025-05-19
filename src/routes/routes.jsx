@@ -4,9 +4,11 @@ import Navbar from "@/component/Navbar";
 import SubNavbar from "@/component/SubNavbar";
 import About from "@/pages/About/About";
 import Betting from "@/pages/Betting/Betting";
+import SportsBahis from "@/pages/Betting/components/MobileView/SportsBahis";
 import SportsSearch from "@/pages/Betting/components/MobileView/SportsSearch";
 import SpprtsSporlas from "@/pages/Betting/components/MobileView/SportsSporlar";
 import Casino from "@/pages/Casino/Casino";
+import EsportsSporlar from "@/pages/Esports/components/MobileView/EsportsSporlar";
 import Esports from "@/pages/Esports/Esports";
 import Games from "@/pages/Games/Games";
 import Home from "@/pages/Home/Home";
@@ -58,6 +60,8 @@ const AllRoutes = () => {
             <Route path="/promotions" element={<Promptions/>} />
             <Route path="/sportsbook" element={<SpprtsSporlas />} />
             <Route path="/search" element={<SportsSearch />} />
+            <Route path="/esportsbook" element={<EsportsSporlar />} />
+            <Route path="/bet-slip" element={<SportsBahis />} />
             {/* Catch-all route */}
             <Route path="*" element={<Home />} />
         </Routes>
