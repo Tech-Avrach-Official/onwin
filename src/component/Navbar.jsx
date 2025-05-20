@@ -3,6 +3,7 @@ import Logo from "../assets/logo.svg";
 import call from "../assets/call.svg";
 import tv from "../assets/tv.svg";
 import tr from "../assets/tr.svg";
+import en from "../assets/gb.svg";
 import { Link } from "react-router-dom";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useEffect, useState } from "react";
@@ -72,7 +73,7 @@ const Navbar = () => {
           <div>
             <Select value={language} onValueChange={onLanguageChange}>
               <SelectTrigger className="w-auto p-0 border-none bg-transparent focus:ring-0 focus:ring-offset-0">
-                <img src={tr} alt="call" className="w-6 h-6 rounded-full cursor-pointer" />
+                <img src={language === "turkish" ? tr : en} alt="call" className="w-6 h-6 rounded-full cursor-pointer" />
               </SelectTrigger>
               <SelectContent className="bg-gradient-to-l from-[#3B2864] to-[#200B4D] text-white">
                 <SelectItem value="turkish">Turkish</SelectItem>
