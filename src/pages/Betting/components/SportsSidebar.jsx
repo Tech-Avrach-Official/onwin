@@ -23,7 +23,7 @@ import { useSite } from "@/context/SiteContext";
 
 const SportsSidebar = () => {
   const [isTopChampionshipsOpen, setIsTopChampionshipsOpen] = useState(true);
-  const [isPopularSportsOpen, setIsPopularSportsOpen] = useState(false);
+  const [isPopularSportsOpen, setIsPopularSportsOpen] = useState(true);
 
   const [isSoccerOpen, setIsSoccerOpen] = useState(true);
   const [isInternationalOpen, setIsInternationalOpen] = useState(true);

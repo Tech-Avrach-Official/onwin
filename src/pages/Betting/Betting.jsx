@@ -6,6 +6,7 @@ import Carousel from '@/component/Carousel'
 import SportsMobBattingUi from './components/MobileView/SportsMobBattingUi'
 
 const Betting = () => {
+
   return (
     <div>
       <div className='hidden md:block'>

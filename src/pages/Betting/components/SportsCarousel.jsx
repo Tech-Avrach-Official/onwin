@@ -54,7 +54,7 @@ const sports = {
 };
 
 
-const SportsCarousel = () => {
+const SportsCarousel = ({ setActiveGame }) => {
   const swiperRef = useRef(null);
   const {language}=useSite()
 
@@ -65,6 +65,19 @@ const SportsCarousel = () => {
     tempSports=sports.tr
   }else{
     tempSports=sports.en
+  }
+
+  const handleGameClick = (sport) => {
+    
+    if(language==='turkish'){
+      // find index of that active sports from sports > tr array
+      const index = sports.tr.findIndex((item) => item.name === sport.name);
+
+      setActiveGame({
+        name: sports?.en[index]?.name,
+        icon: sports?.en[index]?.icon,
+      });
+    }
   }
   return (
     <div className="relative w-full py-4 bg-white">
@@ -85,7 +98,7 @@ const SportsCarousel = () => {
   >
     {tempSports.map((sport, index) => (
       <SwiperSlide key={index} style={{ width: 'auto' }}>
-        <div className="flex items-center gap-1 text-sm text-gray-700">
+        <div className="flex items-center gap-1 text-sm text-gray-700 cursor-pointer" onClick={() => handleGameClick(sport)}>
           <div className="text-2xl">{sport.icon}</div>
           <span className="text-xs whitespace-nowrap">{sport.name}</span>
         </div>
