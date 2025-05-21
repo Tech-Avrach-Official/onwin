@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 const mockCards = [
   {
     image: "/images/cards/blackjack-turkce.png",
@@ -45,18 +45,19 @@ const mockCards = [
 
 const CardGrid = ({ cards = mockCards }) => {
 
-
+const navigate = useNavigate();
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-4">
       {cards.map((card, index) => (
         <div
           key={index}
+          onClick={()=> navigate(`/game-screen?game=${encodeURIComponent(card.name)}`)}
           className="bg-white rounded-sm shadow hover:shadow-lg transition transform hover:-translate-y-1 overflow-hidden cursor-pointer"
         >
           <div className="p-2">
-  <img src={card.image} alt={card.name} className="w-full h-36 object-cover rounded" />
-</div>
+            <img src={card.image} alt={card.name} className="w-full h-36 object-cover rounded" />
+          </div>
           <div className="p-2 text-center text-sm font-semibold">{card.name}</div>
         </div>
       ))}
