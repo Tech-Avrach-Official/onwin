@@ -21,6 +21,7 @@ import Promptions from "@/pages/Promotions/Promotions";
 import Register from "@/pages/Register/Register";
 import Virtual from "@/pages/Virtual/Virtual";
 import { Routes, Route } from "react-router-dom";
+import GameScreen from "@/pages/GameScreen/GameScreen";
 
 // home
 // Betting
@@ -62,6 +63,7 @@ const AllRoutes = () => {
             <Route path="/search" element={<SportsSearch />} />
             <Route path="/esportsbook" element={<EsportsSporlar />} />
             <Route path="/bet-slip" element={<SportsBahis />} />
+            <Route path="/game-screen" element={<GameScreen />} />
             {/* Catch-all route */}
             <Route path="*" element={<Home />} />
         </Routes>

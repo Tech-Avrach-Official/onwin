@@ -1,15 +1,28 @@
 import React, { useState } from 'react'
 import games from '../../../data/games/games.json'
-import { useSite } from '@/context/SiteContext'
+import { useSite } from '@/context/SiteContext';
+import { useNavigate } from 'react-router-dom';
+
 
 const Games = () => {
   const [visibleCount, setVisibleCount] = useState(40)
+  const [selectedgame, setSelectedgame] = useState()
   const {language}=useSite();
+  const navigate = useNavigate();
+
+
   const handleLoadMore = () => {
     setVisibleCount((prev) => prev + 40)
   }
 
   const visibleGames = games.slice(0, visibleCount)
+
+const gameHandler = (game) => {
+  setSelectedgame(game.name); // you can keep this if you still need it elsewhere
+  navigate(`/game-screen?game=${encodeURIComponent(game.name)}`);
+};
+
+
 
   return (
     <div className="py-4 px-4 lg:px-28">
@@ -17,6 +30,7 @@ const Games = () => {
         {visibleGames.map((game, index) => (
           <div
             key={index}
+            onClick={()=>gameHandler(game)}
             className="relative overflow-hidden rounded-xl shadow-md group cursor-pointer"
           >
             <img
