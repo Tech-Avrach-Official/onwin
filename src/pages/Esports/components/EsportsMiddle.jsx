@@ -17,16 +17,23 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-
+import favoriteImg from "../../../assets/esports/favourite.png";
+import cs2Img from "../../../assets/esports/cs2.png";
+import dota2Img from "../../../assets/esports/dota2.png";
+import legendImg from "../../../assets/esports/legend.png";
+import overwatchImg from "../../../assets/esports/overwatch.png";
+import valorantImg from "../../../assets/esports/valorant.png";
+import warcraftImg from "../../../assets/esports/warcraft.png";
+import allImg from "../../../assets/esports/all.png";
 const games = [
-  { id: 1, name: "Favourite", count: 0 },
-  { id: 2, name: "All Games", count: 239 },
-  { id: 3, name: "CS2", count: 44 },
-  { id: 4, name: "Dota 2", count: 9 },
-  { id: 5, name: "League Of Legends", count: 33 },
-  { id: 6, name: "Overwatch", count: 2 },
-  { id: 7, name: "Rainbow Six", count: 4 },
-  { id: 8, name: "Valorant", count: 13 },
+  { id: 1, name: "Favourite", count: 0 ,image: favoriteImg},
+  { id: 2, name: "All Games", count: 239,image: allImg},
+  { id: 3, name: "CS2", count: 44 ,image: cs2Img},
+  { id: 4, name: "Dota 2", count: 9 ,image: dota2Img},
+  { id: 5, name: "League Of Legends", count: 33 ,image: legendImg},
+  { id: 6, name: "Overwatch", count: 2 ,image: overwatchImg},
+  { id: 7, name: "Valorant", count: 13 ,image: valorantImg},
+  { id: 8, name: "Warcraft III", count: 4 ,image: warcraftImg},
 ];
 
 const filters = [
@@ -70,7 +77,7 @@ const EsportsMiddle = () => {
             </div>
 
             {/* Icon */}
-            <img src={esports} alt={game.name} className="w-7 mb-1" />
+            <img src={game.image} alt={game.name} className="w-7 mb-1" />
 
             {/* Name */}
             <p className="text-[11px] text-center line-clamp-1 ">{game.name}</p>
