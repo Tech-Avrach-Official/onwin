@@ -77,6 +77,12 @@ const SportsCarousel = ({ setActiveGame }) => {
         name: sports?.en[index]?.name,
         icon: sports?.en[index]?.icon,
       });
+    } else {
+      console.log(sport)
+      setActiveGame({
+        name: sport.name,
+        icon: sport.icon
+      })
     }
   }
   return (
