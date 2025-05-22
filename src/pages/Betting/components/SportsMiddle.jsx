@@ -486,17 +486,6 @@ const DummyUi = ({ league, activeGameIcon }) => {
   const navigate = useNavigate();
   const { language } = useSite();
 
-  console.log(league)
-  console.log(activeGameIcon)
-
-  // const games = useMemo(() => {
-  //   return Array.from({ length: 6 }, () => ({
-  //     team1: getRandomFromArray(teamNames),
-  //     team2: getRandomFromArray(teamNames),
-  //     number: getRandomInt(),
-  //     odds: Array.from({ length: 6 }, () => getRandomFloat()),
-  //   }));
-  // }, []);
 
 // remove useMemo
   const games = Array.from({ length: 6 }, () => ({

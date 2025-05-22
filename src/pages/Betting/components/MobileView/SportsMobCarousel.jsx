@@ -33,7 +33,7 @@ const sports = {
   ]
 };
 
-const SportsMobCarousel = () => {
+const SportsMobCarousel = ({ setActiveSports }) => {
   const swiperRef = useRef(null);
   const { language } = useSite();
 
@@ -62,7 +62,7 @@ const SportsMobCarousel = () => {
         >
           {tempSports.map((sport, index) => (
             <SwiperSlide key={index} style={{ width: 'auto' }}>
-              <div className="flex items-center gap-1 text-gray-700">
+              <div className="flex items-center gap-1 text-gray-700" onClick={() => setActiveSports({  game: sport.name, icon: sport.icon})}>
                 <div className="text-lg">{sport.icon}</div>
                 <span className="text-[10px] sm:text-sm whitespace-nowrap">{sport.name}</span>
               </div>

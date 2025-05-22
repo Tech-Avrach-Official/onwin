@@ -4,6 +4,8 @@ import LiveMiddle from "./LiveMiddle";
 import { useSite } from "@/context/SiteContext";
 
 const LivePageUi = () => {
+
+
   const {language}=useSite();
   return (
     <div className="p-5 bg-slate-100 h-screen overflow-hidden">
