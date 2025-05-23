@@ -17,15 +17,15 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import favoriteImg from "../../../assets/esports/favourite.png";
-import cs2Img from "../../../assets/esports/cs2.png";
-import dota2Img from "../../../assets/esports/dota2.png";
-import legendImg from "../../../assets/esports/legend.png";
-import overwatchImg from "../../../assets/esports/overwatch.png";
-import valorantImg from "../../../assets/esports/valorant.png";
-import warcraftImg from "../../../assets/esports/warcraft.png";
-import allImg from "../../../assets/esports/all.png";
 import { handler } from "tailwindcss-animate";
+  import favoriteImg from "../../../assets/esports/favourite.png";
+  import cs2Img from "../../../assets/esports/cs2.png";
+  import dota2Img from "../../../assets/esports/dota2.png";
+  import legendImg from "../../../assets/esports/legend.png";
+  import overwatchImg from "../../../assets/esports/overwatch.png";
+  import valorantImg from "../../../assets/esports/valorant.png";
+  import warcraftImg from "../../../assets/esports/warcraft.png";
+  import allImg from "../../../assets/esports/all.png";
 const games = [
   { id: 1, name: "Favourite", count: 0, image: favoriteImg },
   { id: 2, name: "All Games", count: 239, image: allImg },
